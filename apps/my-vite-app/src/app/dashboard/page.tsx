@@ -1,40 +1,54 @@
-import { AppSidebar } from "@/components/app-sidebar"
 import { ChartAreaInteractive } from "@/components/chart-area-interactive"
 import { DataTable } from "@/components/data-table"
 import { SectionCards } from "@/components/section-cards"
-import { SiteHeader } from "@/components/site-header"
-import {
-  SidebarInset,
-  SidebarProvider,
-} from "@/components/ui/sidebar"
+import { PageLayout } from "@/components/page-layout"
+import { PageHeader } from "@/components/page-header"
+import { PageContent } from "@/components/page-content"
+import { Button } from "@workspace/ui/components/button"
 
 import data from "./data.json"
 
 export default function Page() {
+  const breadcrumbs = [
+    { label: "Documents", href: "/" },
+    { label: "Dashboard", current: true }
+  ]
+
+  const headerActions = (
+    <>
+      <Button variant="ghost" size="sm" className="hidden sm:flex">
+        Refresh
+      </Button>
+      <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
+        <a
+          href="https://github.com/shadcn-ui/ui/tree/main/apps/v4/app/(examples)/dashboard"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="dark:text-foreground"
+        >
+          GitHub
+        </a>
+      </Button>
+    </>
+  )
+
   return (
-    <SidebarProvider
-      style={
-        {
-          "--sidebar-width": "calc(var(--spacing) * 72)",
-          "--header-height": "calc(var(--spacing) * 12)",
-        } as React.CSSProperties
-      }
+    <PageLayout 
+      fullWidth
+      headerBreadcrumbs={breadcrumbs}
+      headerActions={headerActions}
     >
-      <AppSidebar variant="inset" />
-      <SidebarInset>
-        <SiteHeader />
-        <div className="flex flex-1 flex-col">
-          <div className="@container/main flex flex-1 flex-col gap-2">
-            <div className="flex flex-col gap-4 py-4 md:gap-6 md:py-6">
-              <SectionCards />
-              <div className="px-4 lg:px-6">
-                <ChartAreaInteractive />
-              </div>
-              <DataTable data={data} />
-            </div>
-          </div>
-        </div>
-      </SidebarInset>
-    </SidebarProvider>
+      <PageHeader
+        title="Dashboard"
+        description="Overview of your project metrics and performance data."
+      />
+      <SectionCards />
+      <PageContent>
+        <ChartAreaInteractive />
+      </PageContent>
+      <PageContent padding="none">
+        <DataTable data={data} />
+      </PageContent>
+    </PageLayout>
   )
 }

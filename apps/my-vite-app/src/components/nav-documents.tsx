@@ -14,7 +14,7 @@ import {
   DropdownMenuItem,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@workspace/ui/components/dropdown-menu"
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -23,18 +23,22 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
   useSidebar,
-} from "@/components/ui/sidebar"
+} from "@workspace/ui/components/sidebar"
 
 export function NavDocuments({
-  items,
+  items = [],
 }: {
-  items: {
+  items?: {
     name: string
     url: string
     icon: Icon
   }[]
 }) {
   const { isMobile } = useSidebar()
+
+  if (!items || items.length === 0) {
+    return null
+  }
 
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
