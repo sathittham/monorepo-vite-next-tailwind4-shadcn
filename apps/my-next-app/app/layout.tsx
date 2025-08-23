@@ -10,12 +10,12 @@ export const metadata: Metadata = {
   title: "Monorepo Starter - Modern Full-Stack Development",
   description: "A comprehensive monorepo starter with Vite, Next.js, Tailwind CSS, and shadcn/ui components. Everything you need to build modern applications.",
   keywords: ["monorepo", "vite", "nextjs", "tailwind", "shadcn/ui", "typescript", "react"],
-  authors: [{ name: "Monorepo Starter Team" }],
+  authors: [{ name: "Sathittham s" }],
   creator: "Monorepo Starter",
   openGraph: {
     type: "website",
-    locale: "en_US",
-    url: "https://monorepo-starter.com",
+    locale: "th_TH",
+    url: "https://sathittham.com",
     title: "Monorepo Starter - Modern Full-Stack Development",
     description: "A comprehensive monorepo starter with Vite, Next.js, Tailwind CSS, and shadcn/ui components.",
     siteName: "Monorepo Starter",
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Monorepo Starter - Modern Full-Stack Development",
     description: "A comprehensive monorepo starter with Vite, Next.js, Tailwind CSS, and shadcn/ui components.",
-    creator: "@monorepostarter",
+    creator: "@sathittham",
   },
 }
 

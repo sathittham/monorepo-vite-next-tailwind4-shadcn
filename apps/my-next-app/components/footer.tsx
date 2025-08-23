@@ -141,7 +141,7 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between">
           <p className="text-muted-foreground text-sm">
-            © 2024 Monorepo Starter. All rights reserved.
+            © 2025 Sathittham.com All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm mt-4 md:mt-0">
             Built with ❤️ using Next.js and shadcn/ui
