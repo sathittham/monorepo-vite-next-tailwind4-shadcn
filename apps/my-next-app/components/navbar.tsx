@@ -45,7 +45,13 @@ export function Navbar() {
             <Link href="/login">Sign In</Link>
           </Button>
           <Button asChild>
-            <Link href="#get-started">Get Started</Link>
+            <a 
+              href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Started
+            </a>
           </Button>
 
           {/* Mobile Navigation */}
@@ -84,7 +90,13 @@ export function Navbar() {
                   Sign In
                 </Link>
                 <Button asChild onClick={() => setIsOpen(false)}>
-                  <Link href="#get-started">Get Started</Link>
+                  <a 
+                    href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get Started
+                  </a>
                 </Button>
               </nav>
             </SheetContent>

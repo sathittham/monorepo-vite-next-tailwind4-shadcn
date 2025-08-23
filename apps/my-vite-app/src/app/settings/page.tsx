@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/page-layout"
 import { PageHeader } from "@/components/page-header"
+import { PageContent } from "@/components/page-content"
 import { ContentGrid } from "@/components/content-grid"
 import { Button } from "@workspace/ui/components/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@workspace/ui/components/card"
@@ -10,15 +11,43 @@ import { Badge } from "@workspace/ui/components/badge"
 import { User, Bell, Shield, Palette, Key } from "lucide-react"
 
 export default function SettingsPage() {
-  return (
-    <PageLayout>
-      <div className="container mx-auto space-y-8">
-        <PageHeader
-          title="Settings"
-          description="Manage your account preferences, security, and application settings."
-        />
+  const breadcrumbs = [
+    { label: "STM23", href: "/" },
+    { label: "Settings", current: true }
+  ]
 
-        <ContentGrid cols="2">
+  const headerActions = (
+    <>
+      <Button variant="ghost" size="sm" className="hidden sm:flex">
+        Actions
+      </Button>
+      <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
+        <a
+          href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="dark:text-foreground"
+        >
+          GitHub
+        </a>
+      </Button>
+    </>
+  )
+
+  return (
+    <PageLayout
+      fullWidth
+      headerBreadcrumbs={breadcrumbs}
+      headerActions={headerActions}
+    >
+      <PageHeader
+        title="Settings"
+        description="Manage your account preferences, security, and application settings."
+      />
+
+      <PageContent>
+        <div className="space-y-8">
+          <ContentGrid cols="2">
           <Card>
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -40,7 +69,7 @@ export default function SettingsPage() {
               </div>
               <div className="space-y-2">
                 <Label htmlFor="company">Company</Label>
-                <Input id="company" defaultValue="Acme Inc." />
+                <Input id="company" defaultValue="Sathittham.com" />
               </div>
               <Button>Save Changes</Button>
             </CardContent>
@@ -158,46 +187,47 @@ export default function SettingsPage() {
               </div>
             </CardContent>
           </Card>
-        </ContentGrid>
+          </ContentGrid>
 
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2">
-              <Key className="w-5 h-5" />
-              API Keys
-            </CardTitle>
-            <CardDescription>
-              Manage your API keys for integrations and third-party access
-            </CardDescription>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="flex items-center justify-between p-4 border rounded-lg">
-              <div>
-                <p className="font-medium">Production API Key</p>
-                <p className="text-sm text-gray-500 font-mono">ak_prod_••••••••••••3a7f</p>
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Key className="w-5 h-5" />
+                API Keys
+              </CardTitle>
+              <CardDescription>
+                Manage your API keys for integrations and third-party access
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="flex items-center justify-between p-4 border rounded-lg">
+                <div>
+                  <p className="font-medium">Production API Key</p>
+                  <p className="text-sm text-gray-500 font-mono">ak_prod_••••••••••••3a7f</p>
+                </div>
+                <div className="flex gap-2">
+                  <Button size="sm" variant="outline">Regenerate</Button>
+                  <Button size="sm" variant="outline">Revoke</Button>
+                </div>
               </div>
-              <div className="flex gap-2">
-                <Button size="sm" variant="outline">Regenerate</Button>
-                <Button size="sm" variant="outline">Revoke</Button>
+              <div className="flex items-center justify-between p-4 border rounded-lg">
+                <div>
+                  <p className="font-medium">Development API Key</p>
+                  <p className="text-sm text-gray-500 font-mono">ak_dev_••••••••••••9b2c</p>
+                </div>
+                <div className="flex gap-2">
+                  <Button size="sm" variant="outline">Regenerate</Button>
+                  <Button size="sm" variant="outline">Revoke</Button>
+                </div>
               </div>
-            </div>
-            <div className="flex items-center justify-between p-4 border rounded-lg">
-              <div>
-                <p className="font-medium">Development API Key</p>
-                <p className="text-sm text-gray-500 font-mono">ak_dev_••••••••••••9b2c</p>
-              </div>
-              <div className="flex gap-2">
-                <Button size="sm" variant="outline">Regenerate</Button>
-                <Button size="sm" variant="outline">Revoke</Button>
-              </div>
-            </div>
-            <Button variant="outline">
-              <Key className="w-4 h-4 mr-2" />
-              Create New API Key
-            </Button>
-          </CardContent>
-        </Card>
-      </div>
+              <Button variant="outline">
+                <Key className="w-4 h-4 mr-2" />
+                Create New API Key
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+      </PageContent>
     </PageLayout>
   )
 }

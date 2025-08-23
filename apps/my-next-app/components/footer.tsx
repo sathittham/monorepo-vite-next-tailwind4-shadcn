@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Github, Twitter, Linkedin, Mail } from "lucide-react"
+import { GitFork, Twitter, Linkedin, Mail } from "lucide-react"
 
 const footerLinks = {
   product: [
@@ -29,10 +29,10 @@ const footerLinks = {
 }
 
 const socialLinks = [
-  { name: "GitHub", icon: Github, href: "https://github.com" },
-  { name: "Twitter", icon: Twitter, href: "https://twitter.com" },
-  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com" },
-  { name: "Email", icon: Mail, href: "mailto:hello@example.com" }
+  { name: "GitHub", icon: GitFork, href: "https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn" },
+  { name: "Twitter", icon: Twitter, href: "https://twitter.com/sathittham" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://linkedin.com/in/sathittham" },
+  { name: "Email", icon: Mail, href: "mailto:hello@sathittham.com" }
 ]
 
 export function Footer() {
@@ -141,7 +141,16 @@ export function Footer() {
 
         <div className="flex flex-col md:flex-row items-center justify-between">
           <p className="text-muted-foreground text-sm">
-            © 2025 Sathittham.com All rights reserved.
+            © 2025{" "}
+            <a 
+              href="https://sathittham.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              Sathittham.com
+            </a>{" "}
+            All rights reserved.
           </p>
           <p className="text-muted-foreground text-sm mt-4 md:mt-0">
             Built with ❤️ using Next.js and shadcn/ui

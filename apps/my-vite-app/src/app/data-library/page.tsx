@@ -9,7 +9,7 @@ import { Database, Upload, FileText, Download } from "lucide-react"
 
 export default function DataLibraryPage() {
   const breadcrumbs = [
-    { label: "Documents", href: "/" },
+    { label: "STM23", href: "/" },
     { label: "Data Library", current: true }
   ]
 
@@ -20,7 +20,7 @@ export default function DataLibraryPage() {
       </Button>
       <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
         <a
-          href="https://github.com/shadcn-ui/ui/tree/main/apps/v4/app/(examples)/dashboard"
+          href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
           rel="noopener noreferrer"
           target="_blank"
           className="dark:text-foreground"
@@ -33,6 +33,7 @@ export default function DataLibraryPage() {
 
   return (
     <PageLayout
+      fullWidth
       headerBreadcrumbs={breadcrumbs}
       headerActions={headerActions}
     >

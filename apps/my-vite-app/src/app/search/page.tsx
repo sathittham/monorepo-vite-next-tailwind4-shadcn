@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/page-layout"
 import { PageHeader } from "@/components/page-header"
+import { PageContent } from "@/components/page-content"
 import { ContentGrid } from "@/components/content-grid"
 import { EmptyState } from "@workspace/ui/components/empty-state"
 import { Button } from "@workspace/ui/components/button"
@@ -9,13 +10,42 @@ import { Badge } from "@workspace/ui/components/badge"
 import { Search, Filter, Clock, FileText, Database, User, Zap } from "lucide-react"
 
 export default function SearchPage() {
+  const breadcrumbs = [
+    { label: "STM23", href: "/" },
+    { label: "Search", current: true }
+  ]
+
+  const headerActions = (
+    <>
+      <Button variant="ghost" size="sm" className="hidden sm:flex">
+        Actions
+      </Button>
+      <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
+        <a
+          href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="dark:text-foreground"
+        >
+          GitHub
+        </a>
+      </Button>
+    </>
+  )
+
   return (
-    <PageLayout>
-      <div className="container mx-auto space-y-8">
-        <PageHeader
-          title="Search"
-          description="Find anything across your data, reports, documents, and more."
-        />
+    <PageLayout
+      fullWidth
+      headerBreadcrumbs={breadcrumbs}
+      headerActions={headerActions}
+    >
+      <PageHeader
+        title="Search"
+        description="Find anything across your data, reports, documents, and more."
+      />
+
+      <PageContent>
+        <div className="space-y-8">
 
         <div className="space-y-4">
           <div className="relative">
@@ -164,7 +194,8 @@ export default function SearchPage() {
             height="200px"
           />
         </div>
-      </div>
+        </div>
+      </PageContent>
     </PageLayout>
   )
 }

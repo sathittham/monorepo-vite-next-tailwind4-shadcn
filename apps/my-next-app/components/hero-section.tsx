@@ -17,12 +17,24 @@ export function HeroSection() {
         </div>
         
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button size="lg" className="text-lg px-8">
-            Get Started
-            <ArrowRight className="ml-2 h-5 w-5" />
+          <Button size="lg" className="text-lg px-8" asChild>
+            <a 
+              href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Get Started
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </a>
           </Button>
-          <Button size="lg" variant="outline" className="text-lg px-8">
-            View Documentation
+          <Button size="lg" variant="outline" className="text-lg px-8" asChild>
+            <a 
+              href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn#readme"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              View Documentation
+            </a>
           </Button>
         </div>
         

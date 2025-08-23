@@ -52,6 +52,7 @@ export function PageLayout({
           <SiteHeader 
             breadcrumbs={headerBreadcrumbs}
             showBreadcrumbs={showBreadcrumbs}
+            showSidebarTrigger={false}
           >
             {headerActions}
           </SiteHeader>

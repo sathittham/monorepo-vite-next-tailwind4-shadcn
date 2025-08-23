@@ -33,17 +33,17 @@ const data = {
   },
   teams: [
     {
-      name: "Acme Inc",
+      name: "Sathittham.com",
       logo: GalleryVerticalEnd,
       plan: "Enterprise",
     },
     {
-      name: "Acme Corp.",
+      name: "STM23",
       logo: AudioWaveform,
       plan: "Startup",
     },
     {
-      name: "Evil Corp.",
+      name: "Relaxio",
       logo: Command,
       plan: "Free",
     },

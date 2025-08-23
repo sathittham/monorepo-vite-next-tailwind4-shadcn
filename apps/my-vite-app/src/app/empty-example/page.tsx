@@ -6,8 +6,35 @@ import { PageHeader } from "@/components/page-header"
 import { PageContent } from "@/components/page-content"
 
 export default function EmptyExamplePage() {
+  const breadcrumbs = [
+    { label: "STM23", href: "/" },
+    { label: "Empty States", current: true }
+  ]
+
+  const headerActions = (
+    <>
+      <Button variant="ghost" size="sm" className="hidden sm:flex">
+        Actions
+      </Button>
+      <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
+        <a
+          href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="dark:text-foreground"
+        >
+          GitHub
+        </a>
+      </Button>
+    </>
+  )
+
   return (
-    <PageLayout fullWidth>
+    <PageLayout 
+      fullWidth
+      headerBreadcrumbs={breadcrumbs}
+      headerActions={headerActions}
+    >
       <PageHeader
         title="Empty State Examples"
         description="Demonstrating different empty state patterns for better user experience."

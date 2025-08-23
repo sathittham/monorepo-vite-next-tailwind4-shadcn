@@ -6,8 +6,35 @@ import { ExampleCard } from "@/components/example-card"
 import { Button } from "@workspace/ui/components/button"
 
 export default function LayoutExamplesPage() {
+  const breadcrumbs = [
+    { label: "STM23", href: "/" },
+    { label: "Layout Examples", current: true }
+  ]
+
+  const headerActions = (
+    <>
+      <Button variant="ghost" size="sm" className="hidden sm:flex">
+        Actions
+      </Button>
+      <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
+        <a
+          href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="dark:text-foreground"
+        >
+          GitHub
+        </a>
+      </Button>
+    </>
+  )
+
   return (
-    <PageLayout>
+    <PageLayout
+      fullWidth
+      headerBreadcrumbs={breadcrumbs}
+      headerActions={headerActions}
+    >
       <PageHeader
         title="Page Layout Examples"
         description="Demonstrating different configurations of the PageLayout component."

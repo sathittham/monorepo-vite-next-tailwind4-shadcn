@@ -10,7 +10,7 @@ import data from "./data.json"
 
 export default function Page() {
   const breadcrumbs = [
-    { label: "Documents", href: "/" },
+    { label: "STM23", href: "/" },
     { label: "Dashboard", current: true }
   ]
 

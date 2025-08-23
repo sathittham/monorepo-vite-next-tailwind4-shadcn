@@ -1,5 +1,6 @@
 import { PageLayout } from "@/components/page-layout"
 import { PageHeader } from "@/components/page-header"
+import { PageContent } from "@/components/page-content"
 import { ContentGrid } from "@/components/content-grid"
 import { Button } from "@workspace/ui/components/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@workspace/ui/components/card"
@@ -7,13 +8,42 @@ import { Input } from "@workspace/ui/components/input"
 import { BookOpen, MessageCircle, FileText, Video, Mail, Phone, Search } from "lucide-react"
 
 export default function HelpPage() {
+  const breadcrumbs = [
+    { label: "STM23", href: "/" },
+    { label: "Help", current: true }
+  ]
+
+  const headerActions = (
+    <>
+      <Button variant="ghost" size="sm" className="hidden sm:flex">
+        Actions
+      </Button>
+      <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
+        <a
+          href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+          rel="noopener noreferrer"
+          target="_blank"
+          className="dark:text-foreground"
+        >
+          GitHub
+        </a>
+      </Button>
+    </>
+  )
+
   return (
-    <PageLayout>
-      <div className="container mx-auto space-y-8">
-        <PageHeader
-          title="Get Help"
-          description="Find answers, get support, and learn how to make the most of your experience."
-        />
+    <PageLayout
+      fullWidth
+      headerBreadcrumbs={breadcrumbs}
+      headerActions={headerActions}
+    >
+      <PageHeader
+        title="Get Help"
+        description="Find answers, get support, and learn how to make the most of your experience."
+      />
+
+      <PageContent>
+        <div className="space-y-8">
 
         <div className="relative">
           <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 w-4 h-4" />
@@ -209,7 +239,8 @@ export default function HelpPage() {
             </Button>
           </CardContent>
         </Card>
-      </div>
+        </div>
+      </PageContent>
     </PageLayout>
   )
 }

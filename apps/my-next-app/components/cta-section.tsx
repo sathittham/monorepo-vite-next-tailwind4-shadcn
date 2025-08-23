@@ -1,5 +1,5 @@
 import { Button } from "@workspace/ui/components/button"
-import { ArrowRight, Github } from "lucide-react"
+import { ArrowRight, GitFork } from "lucide-react"
 
 export function CTASection() {
   return (
@@ -14,13 +14,25 @@ export function CTASection() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="text-lg px-8">
-              <Github className="mr-2 h-5 w-5" />
-              Clone Repository
+            <Button size="lg" className="text-lg px-8" asChild>
+              <a 
+                href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <GitFork className="mr-2 h-5 w-5" />
+                Clone Repository
+              </a>
             </Button>
-            <Button size="lg" variant="outline" className="text-lg px-8">
-              View Documentation
-              <ArrowRight className="ml-2 h-5 w-5" />
+            <Button size="lg" variant="outline" className="text-lg px-8" asChild>
+              <a 
+                href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn#readme"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Documentation
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </a>
             </Button>
           </div>
           
