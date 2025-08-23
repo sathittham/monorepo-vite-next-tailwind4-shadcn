@@ -57,7 +57,7 @@ export function LoginForm({
                   <Input
                     id="email"
                     type="email"
-                    placeholder="m@example.com"
+                    placeholder="hello@sathittham.com"
                     required
                   />
                 </div>
