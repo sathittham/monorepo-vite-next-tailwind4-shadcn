@@ -9,10 +9,15 @@
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "clean": "rm -rf .next",
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:ui": "vitest --ui",
+    "analyze": "ANALYZE=true pnpm build"
   },
   "dependencies": {
-    "@workspace/i18n": "workspace:*",
+    "@workspace/shared-i18n": "workspace:*",
     "@workspace/ui": "workspace:*",
     "clsx": "^2.1.0",
     "framer-motion": "^12.23.12",
@@ -25,11 +30,19 @@
     "tailwind-merge": "^2.6.0"
   },
   "devDependencies": {
+    "@testing-library/jest-dom": "^6.4.0",
+    "@testing-library/react": "^14.2.0",
+    "@testing-library/user-event": "^14.5.0",
     "@types/node": "^20.19.9",
     "@types/react": "^19.1.9",
     "@types/react-dom": "^19.1.7",
+    "@vitejs/plugin-react": "^4.2.0",
+    "@vitest/ui": "^1.6.0",
     "@workspace/eslint-config": "workspace:^",
     "@workspace/typescript-config": "workspace:*",
-    "typescript": "^5.9.2"
+    "jsdom": "^24.0.0",
+    "typescript": "^5.9.2",
+    "vite": "^5.1.0",
+    "vitest": "^1.6.0"
   }
 }

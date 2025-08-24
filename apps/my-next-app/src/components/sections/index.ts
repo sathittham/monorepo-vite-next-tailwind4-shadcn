@@ -1,0 +1,8 @@
+export { HeroSection } from './hero-section'
+export { FeaturesSection } from './features-section'
+export { BenefitsSection } from './benefits-section'
+export { PricingSection } from './pricing-section'
+export { TestimonialsSection } from './testimonials-section'
+export { FaqSection } from './faq-section'
+export { ContactSection } from './contact-section'
+export { CTASection } from './cta-section'

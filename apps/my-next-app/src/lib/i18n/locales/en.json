@@ -1,0 +1,266 @@
+{
+  "components": {
+    "navbar": {
+      "monorepo": "Monorepo",
+      "features": "Features",
+      "benefits": "Benefits", 
+      "pricing": "Pricing",
+      "testimonials": "Testimonials",
+      "faq": "FAQ",
+      "contact": "Contact"
+    },
+    "hero": {
+      "title": "Build faster with our modern monorepo starter",
+      "subtitle": "Everything you need to build modern applications with Vite, Next.js, and shadcn/ui components. Get started in minutes, not hours.",
+      "getStarted": "Get Started",
+      "viewSource": "View Source",
+      "trustedBy": "Trusted by developers worldwide"
+    },
+    "features": {
+      "title": "Everything you need to build modern apps",
+      "subtitle": "Our monorepo starter comes with all the tools and components you need to build beautiful, performant applications quickly.",
+      "lightningFast": "Lightning Fast",
+      "lightningFastDesc": "Built with Vite for instant HMR and optimized builds. Experience blazing fast development.",
+      "typeSafe": "Type Safe",
+      "typeSafeDesc": "Full TypeScript support across the entire monorepo with strict type checking.",
+      "beautifulUI": "Beautiful UI",
+      "beautifulUIDesc": "Pre-built components with shadcn/ui and Tailwind CSS for stunning interfaces.",
+      "developerExperience": "Developer Experience",
+      "developerExperienceDesc": "Modern tooling, hot reload, and excellent developer experience out of the box.",
+      "universal": "Universal",
+      "universalDesc": "Works with both Vite and Next.js applications in a single monorepo setup.",
+      "productionReady": "Production Ready",
+      "productionReadyDesc": "Optimized builds, performance monitoring, and deployment-ready configuration."
+    },
+    "benefits": {
+      "title": "Why choose our monorepo starter?",
+      "subtitle": "Save weeks of setup time and start building your applications immediately with our battle-tested monorepo configuration.",
+      "folderStructure": "~/monorepo-starter",
+      "benefits": [
+        "Pre-configured monorepo with pnpm workspaces",
+        "Vite and Next.js applications in one repository",
+        "Shared UI components with shadcn/ui",
+        "TypeScript configuration for all packages",
+        "Tailwind CSS with custom design system",
+        "ESLint and Prettier pre-configured",
+        "Hot module replacement in development",
+        "Optimized production builds"
+      ]
+    },
+    "pricing": {
+      "title": "Simple, transparent pricing",
+      "subtitle": "Choose the perfect plan for your needs. Upgrade or downgrade at any time.",
+      "mostPopular": "Most Popular",
+      "starter": "Starter",
+      "starterDesc": "Perfect for small projects and personal use",
+      "professional": "Professional",
+      "professionalDesc": "Ideal for growing businesses and teams",
+      "proDesc": "Ideal for growing businesses and teams",
+      "enterprise": "Enterprise",
+      "enterpriseDesc": "For large organizations with custom needs",
+      "perMonth": "per month",
+      "getStarted": "Get Started",
+      "startFreeTrial": "Start Free Trial",
+      "contactSales": "Contact Sales",
+      "starterCTA": "Get Started",
+      "proCTA": "Start Free Trial",
+      "enterpriseCTA": "Contact Sales",
+      "freeTrialNote": "All plans include a 14-day free trial. No credit card required.",
+      "customSolution": "Need a custom solution?",
+      "contactUs": "Contact us",
+      "features": {
+        "upTo5Projects": "Up to 5 projects",
+        "basicComponents": "Basic components",
+        "communitySupport": "Community support",
+        "standardTemplates": "Standard templates",
+        "documentationAccess": "Documentation access",
+        "unlimitedProjects": "Unlimited projects",
+        "premiumComponents": "Premium components",
+        "prioritySupport": "Priority support",
+        "advancedTemplates": "Advanced templates",
+        "customIntegrations": "Custom integrations",
+        "teamCollaboration": "Team collaboration",
+        "apiAccess": "API access",
+        "everythingInProfessional": "Everything in Professional",
+        "customComponents": "Custom components",
+        "dedicatedSupport": "Dedicated support",
+        "onPremiseDeployment": "On-premise deployment",
+        "ssoIntegration": "SSO integration",
+        "advancedAnalytics": "Advanced analytics",
+        "customBranding": "Custom branding",
+        "slaGuarantee": "SLA guarantee"
+      }
+    },
+    "testimonials": {
+      "title": "What developers are saying",
+      "subtitle": "Join hundreds of developers who are building faster with our monorepo template",
+      "readyToJoin": "Ready to join them?",
+      "getStartedToday": "Get started today →",
+      "reviews": [
+        {
+          "name": "Sarah Chen",
+          "role": "Frontend Developer",
+          "company": "TechCorp",
+          "content": "This monorepo template saved me weeks of setup time. The integration between Vite and Next.js is seamless, and the component library is fantastic."
+        },
+        {
+          "name": "Michael Rodriguez",
+          "role": "CTO",
+          "company": "StartupLab",
+          "content": "Perfect for our team's needs. The TypeScript configuration and shared components across applications have improved our development velocity significantly."
+        },
+        {
+          "name": "Emily Johnson",
+          "role": "Product Manager",
+          "company": "InnovateCo",
+          "content": "The documentation is excellent and the template follows modern best practices. Our developers love working with this setup."
+        },
+        {
+          "name": "David Kim",
+          "role": "Full Stack Developer",
+          "company": "WebSolutions",
+          "content": "Incredibly well-structured and maintains consistency across different app types. The shared UI package is a game-changer."
+        },
+        {
+          "name": "Lisa Thompson",
+          "role": "Lead Developer",
+          "company": "DesignStudio",
+          "content": "The theme switching and internationalization features work flawlessly. This template has everything we needed to get started quickly."
+        },
+        {
+          "name": "Alex Park",
+          "role": "Software Engineer",
+          "company": "CloudTech",
+          "content": "Outstanding developer experience. The build times are fast and the development workflow is smooth across both Vite and Next.js apps."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "subtitle": "Find answers to common questions about our monorepo starter template",
+      "stillHaveQuestions": "Still have questions?",
+      "contactSupport": "Contact our support team →",
+      "questions": [
+        {
+          "question": "What is included in the starter template?",
+          "answer": "The starter template includes a complete monorepo setup with Vite, Next.js, Tailwind CSS v4, shadcn/ui components, TypeScript configuration, and pre-built components for rapid development."
+        },
+        {
+          "question": "Can I use this for commercial projects?",
+          "answer": "Yes, you can use this starter template for both personal and commercial projects. It's built with open-source technologies and follows best practices for production applications."
+        },
+        {
+          "question": "How do I customize the components?",
+          "answer": "All components are built using shadcn/ui and are fully customizable. You can modify the source code, adjust Tailwind classes, or extend functionality to match your project requirements."
+        },
+        {
+          "question": "Is there ongoing support and updates?",
+          "answer": "We regularly update the template with the latest versions of dependencies, new components, and improvements. Professional and Enterprise plans include priority support and dedicated assistance."
+        },
+        {
+          "question": "Can I integrate with my existing backend?",
+          "answer": "Absolutely! The template is backend-agnostic and can be integrated with any REST API, GraphQL endpoint, or serverless functions. Examples and documentation are provided for popular backends."
+        },
+        {
+          "question": "What's the difference between the Vite and Next.js apps?",
+          "answer": "The Vite app is ideal for SPAs and client-side applications with fast development and build times. The Next.js app provides SSR, SSG, and full-stack capabilities for more complex applications."
+        },
+        {
+          "question": "How do I deploy the applications?",
+          "answer": "Both applications can be deployed to popular platforms like Vercel, Netlify, or traditional hosting. The template includes build configurations and deployment examples for various platforms."
+        },
+        {
+          "question": "Is TypeScript required?",
+          "answer": "TypeScript is preconfigured and recommended for better development experience and code quality. However, you can convert to JavaScript if preferred, though you'll lose some of the template's benefits."
+        }
+      ]
+    },
+    "contact": {
+      "badge": "Contact",
+      "title": "Connect With Us",
+      "subtitle": "Get in touch with our team for support, partnerships, or custom development. We're here to help you build something amazing.",
+      "info": {
+        "findUs": "Find us",
+        "address": "123 Tech Street, San Francisco, CA 94105",
+        "callUs": "Call us",
+        "phone": "+1 (555) 123-4567",
+        "mailUs": "Mail us",
+        "email": "hello@monorepo-starter.com",
+        "visitUs": "Visit us",
+        "hours": "Monday - Friday\n9AM - 6PM PST"
+      },
+      "form": {
+        "firstName": "First Name",
+        "firstNamePlaceholder": "Enter your first name",
+        "lastName": "Last Name",
+        "lastNamePlaceholder": "Enter your last name",
+        "email": "Email",
+        "emailPlaceholder": "Enter your email address",
+        "subject": "Subject",
+        "subjectPlaceholder": "Select a subject",
+        "message": "Message",
+        "messagePlaceholder": "Tell us how we can help you...",
+        "sendMessage": "Send Message",
+        "subjects": [
+          "General Inquiry",
+          "Technical Support",
+          "Partnership",
+          "Custom Development",
+          "Consultation",
+          "Other"
+        ]
+      }
+    },
+    "cta": {
+      "title": "Ready to build something amazing?",
+      "subtitle": "Get started with our monorepo starter today and accelerate your development workflow.",
+      "cloneRepository": "Clone Repository",
+      "viewDocumentation": "View Documentation",
+      "freeOpenSource": "Free and open source. No registration required."
+    },
+    "footer": {
+      "brandDescription": "A modern monorepo starter with everything you need to build beautiful, performant applications with Vite, Next.js, and shadcn/ui.",
+      "monorepo": "Monorepo",
+      "product": "Product",
+      "company": "Company",
+      "resources": "Resources",
+      "legal": "Legal",
+      "links": {
+        "features": "Features",
+        "pricing": "Pricing",
+        "documentation": "Documentation",
+        "changelog": "Changelog",
+        "about": "About",
+        "blog": "Blog",
+        "careers": "Careers",
+        "contact": "Contact",
+        "community": "Community",
+        "helpCenter": "Help Center",
+        "support": "Support",
+        "status": "Status",
+        "privacy": "Privacy",
+        "terms": "Terms",
+        "cookiePolicy": "Cookie Policy",
+        "licenses": "Licenses"
+      },
+      "copyright": "All rights reserved.",
+      "builtWith": "Built with ❤️ using Next.js and shadcn/ui"
+    }
+  },
+  "emptyState": {
+    "noProjectsTitle": "No projects found",
+    "noProjectsDescription": "Get started by creating your first project.",
+    "createProject": "Create Project",
+    "noSearchResultsTitle": "No search results",
+    "noSearchResultsDescription": "Try adjusting your search criteria or check for typos.",
+    "clearSearch": "Clear Search",
+    "noDocumentsTitle": "No documents yet",
+    "noDocumentsDescription": "Upload your first document to get started with organizing your files.",
+    "uploadDocument": "Upload Document"
+  },
+  "metadata": {
+    "title": "Monorepo Starter - Build faster with modern tools",
+    "description": "A modern monorepo starter with Vite, Next.js, Tailwind CSS v4, and shadcn/ui. Get started in minutes with the best developer experience.",
+    "keywords": "monorepo, vite, nextjs, tailwind, shadcn/ui, typescript, react, starter, template"
+  }
+}

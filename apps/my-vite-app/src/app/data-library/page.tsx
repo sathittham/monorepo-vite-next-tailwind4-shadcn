@@ -16,29 +16,11 @@ export default function DataLibraryPage() {
     { label: t('common.dataLibrary'), current: true }
   ]
 
-  const headerActions = (
-    <>
-      <Button variant="ghost" size="sm" className="hidden sm:flex">
-        {t('pages.dataLibrary.exportData')}
-      </Button>
-      <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
-        <a
-          href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="dark:text-foreground"
-        >
-          {t('common.github')}
-        </a>
-      </Button>
-    </>
-  )
-
   return (
     <PageLayout
       fullWidth
       headerBreadcrumbs={breadcrumbs}
-      headerActions={headerActions}
+      headerActions={null}
     >
       <PageHeader
         title={t('pages.dataLibrary.title')}

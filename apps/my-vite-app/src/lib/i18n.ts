@@ -1,6 +1,25 @@
 import i18n from 'i18next'
 import { initReactI18next } from 'react-i18next'
-import { enTranslations, thTranslations, defaultLocale } from '@workspace/i18n'
+import { 
+  enTranslations as sharedEnTranslations, 
+  thTranslations as sharedThTranslations, 
+  defaultLocale 
+} from '@workspace/shared-i18n'
+
+// Import app-specific translations
+import enTranslations from './i18n/locales/en.json'
+import thTranslations from './i18n/locales/th.json'
+
+// Merge shared and app-specific translations
+const mergedEnTranslations = {
+  ...sharedEnTranslations,
+  ...enTranslations
+}
+
+const mergedThTranslations = {
+  ...sharedThTranslations,
+  ...thTranslations
+}
 
 i18n
   .use(initReactI18next)
@@ -15,10 +34,10 @@ i18n
     
     resources: {
       en: {
-        translation: enTranslations,
+        translation: mergedEnTranslations,
       },
       th: {
-        translation: thTranslations,
+        translation: mergedThTranslations,
       },
     },
   })

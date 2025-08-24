@@ -15,29 +15,11 @@ export default function SearchPage() {
     { label: "Search", current: true }
   ]
 
-  const headerActions = (
-    <>
-      <Button variant="ghost" size="sm" className="hidden sm:flex">
-        Actions
-      </Button>
-      <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
-        <a
-          href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
-          rel="noopener noreferrer"
-          target="_blank"
-          className="dark:text-foreground"
-        >
-          GitHub
-        </a>
-      </Button>
-    </>
-  )
-
   return (
     <PageLayout
       fullWidth
       headerBreadcrumbs={breadcrumbs}
-      headerActions={headerActions}
+      headerActions={null}
     >
       <PageHeader
         title="Search"

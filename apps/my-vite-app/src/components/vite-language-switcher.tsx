@@ -7,7 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '@workspace/ui/components/dropdown-menu'
 import { Languages } from 'lucide-react'
-import { locales, localeNames, type Locale } from '@workspace/i18n'
+import { locales, localeNames, type Locale } from '@workspace/shared-i18n'
 
 export function ViteLanguageSwitcher() {
   const { i18n } = useTranslation()

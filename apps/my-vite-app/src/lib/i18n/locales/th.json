@@ -1,0 +1,350 @@
+{
+  "navigation": {
+    "dashboard": "แดชบอร์ด",
+    "dataLibrary": "ห้องสมุดข้อมูล",
+    "reports": "รายงาน",
+    "layoutExamples": "ตัวอย่างเลย์เอาต์",
+    "emptyStates": "สถานะว่าง",
+    "simplePage": "หน้าง่าย",
+    "account": "บัญชี",
+    "billing": "การเรียกเก็บเงิน",
+    "notifications": "การแจ้งเตือน",
+    "logOut": "ออกจากระบบ",
+    "quickCreate": "สร้างด่วน",
+    "inbox": "กล่องข้อความ"
+  },
+  "pages": {
+    "dashboard": {
+      "title": "แดชบอร์ด",
+      "description": "ภาพรวมของเมตริกโปรเจกต์และข้อมูลประสิทธิภาพของคุณ",
+      "cards": {
+        "totalRevenue": {
+          "title": "รายได้รวม",
+          "trendUp": "แนวโน้มเพิ่มขึ้นในเดือนนี้",
+          "description": "ผู้เยี่ยมชมในช่วง 6 เดือนที่ผ่านมา"
+        },
+        "newCustomers": {
+          "title": "ลูกค้าใหม่",
+          "trendDown": "ลดลง 20% ในช่วงนี้",
+          "description": "การได้มาต้องการความสนใจ"
+        },
+        "activeAccounts": {
+          "title": "บัญชีที่ใช้งานอยู่",
+          "trendStrong": "การรักษาผู้ใช้ที่แข็งแกร่ง",
+          "description": "การมีส่วนร่วมเกินเป้าหมาย"
+        },
+        "growthRate": {
+          "title": "อัตราการเติบโต",
+          "trendSteady": "การเพิ่มประสิทธิภาพอย่างต่อเนื่อง",
+          "description": "ตรงตามการคาดการณ์การเติบโต"
+        }
+      },
+      "chart": {
+        "title": "ผู้เยี่ยมชมทั้งหมด",
+        "description": "รวมใน 3 เดือนที่ผ่านมา",
+        "shortDescription": "3 เดือนที่ผ่านมา",
+        "timeRanges": {
+          "3months": "3 เดือนที่ผ่านมา",
+          "30days": "30 วันที่ผ่านมา",
+          "7days": "7 วันที่ผ่านมา"
+        },
+        "chartConfig": {
+          "visitors": "ผู้เยี่ยมชม",
+          "desktop": "เดสก์ท็อป",
+          "mobile": "มือถือ"
+        }
+      },
+      "dataTable": {
+        "columns": {
+          "header": "หัวข้อ",
+          "sectionType": "ประเภทส่วน",
+          "status": "สถานะ",
+          "target": "เป้าหมาย",
+          "limit": "ขีดจำกัด",
+          "reviewer": "ผู้ตรวจสอบ"
+        },
+        "actions": {
+          "customizeColumns": "ปรับแต่งคอลัมน์",
+          "columns": "คอลัมน์",
+          "addSection": "เพิ่มส่วน",
+          "edit": "แก้ไข",
+          "makeACopy": "สร้างสำเนา",
+          "favorite": "รายการโปรด",
+          "delete": "ลบ",
+          "assignReviewer": "มอบหมายผู้ตรวจสอบ"
+        },
+        "tabs": {
+          "outline": "โครงร่าง",
+          "pastPerformance": "ผลงานที่ผ่านมา",
+          "keyPersonnel": "บุคลากรหลัก",
+          "focusDocuments": "เอกสารโฟกัส"
+        },
+        "form": {
+          "header": "หัวข้อ",
+          "type": "ประเภท",
+          "status": "สถานะ",
+          "target": "เป้าหมาย",
+          "limit": "ขีดจำกัด",
+          "reviewer": "ผู้ตรวจสอบ",
+          "submit": "ส่ง",
+          "done": "เสร็จสิ้น",
+          "selectType": "เลือกประเภท",
+          "selectStatus": "เลือกสถานะ",
+          "selectReviewer": "เลือกผู้ตรวจสอบ"
+        },
+        "pagination": {
+          "rowsPerPage": "แถวต่อหน้า",
+          "page": "หน้า",
+          "of": "จาก",
+          "selected": "แถวที่เลือก",
+          "noResults": "ไม่มีผลลัพธ์",
+          "dragToReorder": "ลากเพื่อจัดเรียงใหม่",
+          "selectAll": "เลือกทั้งหมด",
+          "selectRow": "เลือกแถว",
+          "openMenu": "เปิดเมนู",
+          "goToFirstPage": "ไปหน้าแรก",
+          "goToPreviousPage": "ไปหน้าก่อนหน้า",
+          "goToNextPage": "ไปหน้าถัดไป",
+          "goToLastPage": "ไปหน้าสุดท้าย"
+        },
+        "drawer": {
+          "showingVisitors": "แสดงผู้เยี่ยมชมทั้งหมดใน 6 เดือนที่ผ่านมา",
+          "trendingUp": "แนวโน้มเพิ่มขึ้น 5.2% ในเดือนนี้",
+          "randomText": "แสดงผู้เยี่ยมชมทั้งหมดใน 6 เดือนที่ผ่านมา นี่เป็นเพียงข้อความสุ่มเพื่อทดสอบเลย์เอาต์ ซึ่งครอบคลุมหลายบรรทัดและควรวางตัวให้พอดี"
+        },
+        "types": {
+          "tableOfContents": "สารบัญ",
+          "executiveSummary": "สรุปผู้บริหาร",
+          "technicalApproach": "แนวทางทางเทคนิค",
+          "design": "การออกแบบ",
+          "capabilities": "ความสามารถ",
+          "focusDocuments": "เอกสารโฟกัส",
+          "narrative": "การเล่าเรื่อง",
+          "coverPage": "หน้าปก"
+        },
+        "statuses": {
+          "done": "เสร็จสิ้น",
+          "inProgress": "กำลังดำเนินการ",
+          "notStarted": "ยังไม่เริ่ม"
+        },
+        "reviewers": {
+          "eddieLake": "Eddie Lake",
+          "jamikTashpulatov": "Jamik Tashpulatov",
+          "emilyWhalen": "Emily Whalen"
+        },
+        "toast": {
+          "saving": "กำลังบันทึก",
+          "success": "เสร็จสิ้น",
+          "error": "เกิดข้อผิดพลาด"
+        }
+      }
+    },
+    "dataLibrary": {
+      "title": "ห้องสมุดข้อมูล",
+      "description": "จัดการและจัดระเบียบไฟล์ข้อมูล ชุดข้อมูล และการเชื่อมต่อฐานข้อมูลของคุณ",
+      "uploadDataset": "อัปโหลดชุดข้อมูล",
+      "connectDatabase": "เชื่อมต่อฐานข้อมูล",
+      "importCSV": "นำเข้า CSV",
+      "exportData": "ส่งออกข้อมูล",
+      "export": "ส่งออก",
+      "lastUpdated": "อัปเดตล่าสุด",
+      "liveConnection": "การเชื่อมต่อแบบสด",
+      "hoursAgo": "ชั่วโมงที่แล้ว",
+      "dayAgo": "วันที่แล้ว",
+      "daysAgo": "วันที่แล้ว",
+      "noRecentUploads": "ไม่มีการอัปโหลดล่าสุด",
+      "noRecentUploadsDesc": "อัปโหลดชุดข้อมูลแรกของคุณเพื่อเริ่มต้นการวิเคราะห์ข้อมูล",
+      "datasets": {
+        "customerDatabase": {
+          "title": "ฐานข้อมูลลูกค้า",
+          "description": "ข้อมูลลูกค้าหลักที่มี 12,450 เรคคอร์ด"
+        },
+        "salesData": {
+          "title": "ข้อมูลยอดขาย 2024",
+          "description": "รายงานยอดขายรายไตรมาสและการวิเคราะห์"
+        },
+        "inventorySystem": {
+          "title": "ระบบสินค้าคงคลัง",
+          "description": "การติดตามและจัดการสินค้าคงคลังแบบเรียลไทม์"
+        }
+      }
+    },
+    "reports": {
+      "title": "รายงาน",
+      "description": "ดู สร้าง และจัดการรายงานธุรกิจและการวิเคราะห์ของคุณ",
+      "createReport": "สร้างรายงาน",
+      "scheduleReport": "กำหนดการรายงาน",
+      "exportAll": "ส่งออกทั้งหมด",
+      "quickActions": "การดำเนินการด่วน",
+      "view": "ดู",
+      "download": "ดาวน์โหลด",
+      "share": "แชร์",
+      "viewTemplate": "ดูเทมเพลต",
+      "editSchedule": "แก้ไขกำหนดการ",
+      "continueEditing": "แก้ไขต่อ",
+      "preview": "ดูตัวอย่าง",
+      "generatedOn": "สร้างเมื่อ",
+      "nextRun": "รันครั้งต่อไป",
+      "lastModified": "แก้ไขล่าสุด",
+      "salesDashboardReport": "รายงานแดชบอร์ดยอดขาย",
+      "customDataReport": "รายงานข้อมูลแบบกำหนดเอง",
+      "recurringReportSetup": "การตั้งค่ารายงานแบบวนซ้ำ",
+      "badges": {
+        "generated": "สร้างแล้ว",
+        "scheduled": "กำหนดการแล้ว",
+        "draft": "ร่าง"
+      },
+      "reportTypes": {
+        "salesPerformance": {
+          "title": "ประสิทธิภาพยอดขาย Q4",
+          "description": "การวิเคราะห์ยอดขายรายไตรมาสพร้อมแนวโน้มรายได้"
+        },
+        "customerAnalytics": {
+          "title": "การวิเคราะห์ลูกค้า",
+          "description": "เมตริกพฤติกรรมลูกค้าและการมีส่วนร่วมรายเดือน"
+        },
+        "financialSummary": {
+          "title": "สรุปทางการเงิน",
+          "description": "ภาพรวมทางการเงินที่ครอบคลุมและการคาดการณ์"
+        },
+        "weeklyOperations": {
+          "title": "การดำเนินงานรายสัปดาห์",
+          "description": "เมตริกการดำเนินงานและการติดตาม KPI"
+        }
+      }
+    },
+    "settings": {
+      "title": "การตั้งค่า",
+      "description": "จัดการการตั้งค่าบัญชี ความปลอดภัย และแอปพลิเคชันของคุณ",
+      "profileSettings": {
+        "title": "การตั้งค่าโปรไฟล์",
+        "description": "อัปเดตข้อมูลส่วนตัวและการตั้งค่าของคุณ",
+        "fullName": "ชื่อเต็ม",
+        "emailAddress": "ที่อยู่อีเมล",
+        "company": "บริษัท",
+        "saveChanges": "บันทึกการเปลี่ยนแปลง"
+      },
+      "notifications": {
+        "title": "การแจ้งเตือน",
+        "description": "กำหนดค่าวิธีที่คุณได้รับการแจ้งเตือน",
+        "emailNotifications": "การแจ้งเตือนทางอีเมล",
+        "emailNotificationsDesc": "รับการอัปเดตทางอีเมล",
+        "pushNotifications": "การแจ้งเตือนแบบพุช",
+        "pushNotificationsDesc": "การแจ้งเตือนแบบพุชของเบราว์เซอร์",
+        "weeklyReports": "รายงานรายสัปดาห์",
+        "weeklyReportsDesc": "สรุปกิจกรรมรายสัปดาห์",
+        "configure": "กำหนดค่า",
+        "enabled": "เปิดใช้งาน",
+        "disabled": "ปิดใช้งาน"
+      },
+      "security": {
+        "title": "ความปลอดภัย",
+        "description": "จัดการการตั้งค่าความปลอดภัยบัญชีของคุณ",
+        "twoFactor": "การยืนยันตัวตนสองขั้นตอน",
+        "twoFactorDesc": "เพิ่มความปลอดภัยให้กับบัญชีของคุณ",
+        "password": "รหัสผ่าน",
+        "passwordDesc": "เปลี่ยนล่าสุด 30 วันที่แล้ว",
+        "activeSessions": "เซสชันที่ใช้งานอยู่",
+        "activeSessionsDesc": "3 เซสชันที่ใช้งานอยู่",
+        "setup": "ตั้งค่า",
+        "change": "เปลี่ยน",
+        "manage": "จัดการ"
+      },
+      "appearance": {
+        "title": "รูปลักษณ์",
+        "description": "ปรับแต่งรูปลักษณ์และความรู้สึกของอินเทอร์เฟซของคุณ",
+        "theme": "ธีม",
+        "language": "ภาษา",
+        "languageValue": "ไทย",
+        "sidebar": "แถบด้านข้าง",
+        "sidebarDesc": "ยุบตามค่าเริ่มต้น",
+        "light": "สว่าง",
+        "dark": "มืด",
+        "auto": "อัตโนมัติ"
+      },
+      "apiKeys": {
+        "title": "API Keys",
+        "description": "จัดการ API Keys ของคุณสำหรับการรวมระบบและการเข้าถึงจากบุคคลที่สาม",
+        "productionKey": "Production API Key",
+        "developmentKey": "Development API Key",
+        "regenerate": "สร้างใหม่",
+        "revoke": "เพิกถอน",
+        "createNew": "สร้าง API Key ใหม่"
+      }
+    },
+    "login": {
+      "appName": "My Vite App"
+    },
+    "simplePage": {
+      "title": "เลย์เอาต์หน้าง่าย",
+      "description": "เลย์เอาต์หน้าเว็บที่สะอาดและจัดระเบียบด้วยโครงสร้างและการนำทางที่สอดคล้องกัน - เหมาะสำหรับหน้าเนื้อหา",
+      "featureOne": {
+        "title": "ฟีเจอร์หนึ่ง",
+        "description": "คำอธิบายของฟีเจอร์หรือส่วนแรก",
+        "content": "การ์ดนี้แสดงให้เห็นว่าเนื้อหาดูเป็นอย่างไรในเลย์เอาต์ที่เรียบง่าย เหมาะสำหรับการแสดงฟีเจอร์ บริการ หรือเนื้อหาอื่นๆ"
+      },
+      "featureTwo": {
+        "title": "ฟีเจอร์สอง", 
+        "description": "คำอธิบายของฟีเจอร์หรือส่วนที่สอง",
+        "content": "ตัวอย่างการ์ดอื่นที่แสดงให้เห็นว่าเนื้อหาหลายชิ้นสามารถจัดระเบียบในเลย์เอาต์แบบกริดที่สะอาดได้อย่างไร"
+      }
+    },
+    "layoutExamples": {
+      "title": "ตัวอย่างเลย์เอาต์หน้า",
+      "description": "แสดงการกำหนดค่าต่างๆ ของคอมโพเนนต์ PageLayout",
+      "examples": {
+        "defaultLayout": {
+          "title": "เลย์เอาต์เริ่มต้น",
+          "description": "เลย์เอาต์มาตรฐานพร้อมไซด์บาร์และส่วนหัว"
+        },
+        "noSidebar": {
+          "title": "ไม่มีไซด์บาร์",
+          "description": "เลย์เอาต์แบบเต็มความกว้างโดยไม่มีไซด์บาร์"
+        },
+        "customGap": {
+          "title": "ช่องว่างแบบกำหนดเอง",
+          "description": "ระยะห่างที่แตกต่างระหว่างส่วนเนื้อหา"
+        },
+        "noHeader": {
+          "title": "ไม่มีส่วนหัว",
+          "description": "เลย์เอาต์โดยไม่มีส่วนหัวของเว็บไซต์"
+        },
+        "floatingSidebar": {
+          "title": "ไซด์บาร์แบบลอย",
+          "description": "ไซด์บาร์ที่มีตัวแปรแบบลอย"
+        },
+        "noContainerPadding": {
+          "title": "ไม่มีขอบคอนเทนเนอร์",
+          "description": "ลบขอบเริ่มต้นสำหรับเลย์เอาต์แบบกำหนดเอง"
+        }
+      },
+      "availableComponents": "คอมโพเนนต์ที่พร้อมใช้งาน",
+      "pageLayoutProps": "พร็อพของ PageLayout",
+      "pageContentProps": "พร็อพของ PageContent",
+      "usageExamples": "ตัวอย่างการใช้งาน",
+      "actionButton": "ปุ่มแอคชัน",
+      "secondaryAction": "แอคชันรอง"
+    },
+    "emptyStates": {
+      "title": "ตัวอย่างสถานะว่าง",
+      "description": "แสดงรูปแบบสถานะว่างต่างๆ เพื่อประสบการณ์ผู้ใช้ที่ดีขึ้น",
+      "sections": {
+        "defaultEmptyState": "สถานะว่างเริ่มต้น",
+        "withActionButton": "พร้อมปุ่มแอคชัน",
+        "searchResults": "ผลการค้นหา",
+        "documents": "เอกสาร"
+      }
+    }
+  },
+  "emptyState": {
+    "noProjectsTitle": "ไม่พบโปรเจกต์",
+    "noProjectsDescription": "เริ่มต้นด้วยการสร้างโปรเจกต์แรกของคุณ",
+    "createProject": "สร้างโปรเจกต์",
+    "noSearchResultsTitle": "ไม่พบผลการค้นหา",
+    "noSearchResultsDescription": "ลองปรับเกณฑ์การค้นหาหรือตรวจสอบการสะกดคำ",
+    "clearSearch": "ล้างการค้นหา",
+    "noDocumentsTitle": "ยังไม่มีเอกสาร",
+    "noDocumentsDescription": "อัปโหลดเอกสารแรกของคุณเพื่อเริ่มจัดระเบียบไฟล์",
+    "uploadDocument": "อัปโหลดเอกสาร"
+  }
+}
