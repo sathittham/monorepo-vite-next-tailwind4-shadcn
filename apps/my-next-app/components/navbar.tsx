@@ -5,17 +5,32 @@ import { Sheet, SheetContent, SheetTrigger } from "@workspace/ui/components/shee
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import Link from "next/link"
-
-const navItems = [
-  { name: "Features", href: "#features" },
-  { name: "Benefits", href: "#benefits" },
-  { name: "Pricing", href: "#pricing" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" }
-]
+import { useTranslations } from 'next-intl'
+import { NextLanguageSwitcher } from "./next-language-switcher"
+import { NextThemeSwitcher } from "./next-theme-switcher"
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
+  const t = useTranslations('components.navbar')
+
+  const navItems = [
+    { name: t('features'), href: "#features" },
+    { name: t('benefits'), href: "#benefits" },
+    { name: t('pricing'), href: "#pricing" },
+    { name: t('testimonials'), href: "#testimonials" },
+    { name: t('faq'), href: "#faq" },
+    { name: t('contact'), href: "#contact" }
+  ]
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId.replace('#', ''))
+    if (element) {
+      element.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      })
+    }
+  }
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -24,35 +39,26 @@ export function Navbar() {
           <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
             <span className="text-primary-foreground font-bold text-sm">M</span>
           </div>
-          <span className="font-bold text-xl">Monorepo</span>
+          <span className="font-bold text-xl">{t('monorepo')}</span>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           {navItems.map((item) => (
-            <Link
+            <button
               key={item.name}
-              href={item.href}
-              className="text-sm font-medium transition-colors hover:text-primary"
+              onClick={() => scrollToSection(item.href)}
+              className="relative text-sm font-medium transition-all duration-300 hover:text-primary cursor-pointer group"
             >
               {item.name}
-            </Link>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full"></span>
+            </button>
           ))}
         </nav>
 
         <div className="flex items-center space-x-4">
-          <Button variant="ghost" asChild className="hidden md:inline-flex">
-            <Link href="/login">Sign In</Link>
-          </Button>
-          <Button asChild>
-            <a 
-              href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Get Started
-            </a>
-          </Button>
+          <NextThemeSwitcher />
+          <NextLanguageSwitcher />
 
           {/* Mobile Navigation */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -67,7 +73,7 @@ export function Navbar() {
                   <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
                     <span className="text-primary-foreground font-bold text-sm">M</span>
                   </div>
-                  <span className="font-bold text-xl">Monorepo</span>
+                  <span className="font-bold text-xl">{t('monorepo')}</span>
                 </Link>
                 <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
                   <X className="h-5 w-5" />
@@ -76,28 +82,17 @@ export function Navbar() {
               
               <nav className="flex flex-col space-y-6">
                 {navItems.map((item) => (
-                  <Link
+                  <button
                     key={item.name}
-                    href={item.href}
-                    className="text-lg font-medium transition-colors hover:text-primary"
-                    onClick={() => setIsOpen(false)}
+                    onClick={() => {
+                      scrollToSection(item.href)
+                      setIsOpen(false)
+                    }}
+                    className="text-lg font-medium transition-colors hover:text-primary text-left"
                   >
                     {item.name}
-                  </Link>
+                  </button>
                 ))}
-                <hr className="my-4" />
-                <Link href="/login" className="text-lg font-medium" onClick={() => setIsOpen(false)}>
-                  Sign In
-                </Link>
-                <Button asChild onClick={() => setIsOpen(false)}>
-                  <a 
-                    href="https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Get Started
-                  </a>
-                </Button>
               </nav>
             </SheetContent>
           </Sheet>

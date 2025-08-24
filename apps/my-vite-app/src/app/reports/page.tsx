@@ -6,17 +6,20 @@ import { Button } from "@workspace/ui/components/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@workspace/ui/components/card"
 import { Badge } from "@workspace/ui/components/badge"
 import { FileText, TrendingUp, Calendar, Share, Download, Plus } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export default function ReportsPage() {
+  const { t } = useTranslation()
+  
   const breadcrumbs = [
     { label: "STM23", href: "/" },
-    { label: "Reports", current: true }
+    { label: t('common.reports'), current: true }
   ]
 
   const headerActions = (
     <>
       <Button variant="ghost" size="sm" className="hidden sm:flex">
-        Export All
+        {t('pages.reports.exportAll')}
       </Button>
       <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
         <a
@@ -25,7 +28,7 @@ export default function ReportsPage() {
           target="_blank"
           className="dark:text-foreground"
         >
-          GitHub
+          {t('common.github')}
         </a>
       </Button>
     </>
@@ -38,8 +41,8 @@ export default function ReportsPage() {
       headerActions={headerActions}
     >
       <PageHeader
-        title="Reports"
-        description="View, create, and manage your business reports and analytics."
+        title={t('pages.reports.title')}
+        description={t('pages.reports.description')}
       />
 
       <PageContent>
@@ -47,11 +50,11 @@ export default function ReportsPage() {
           <div className="flex gap-4">
             <Button>
               <Plus className="w-4 h-4 mr-2" />
-              Create Report
+              {t('pages.reports.createReport')}
             </Button>
             <Button variant="outline">
               <Calendar className="w-4 h-4 mr-2" />
-              Schedule Report
+              {t('pages.reports.scheduleReport')}
             </Button>
           </div>
 
@@ -61,31 +64,31 @@ export default function ReportsPage() {
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2">
                   <TrendingUp className="w-5 h-5" />
-                  Sales Performance Q4
+                  {t('pages.reports.reportTypes.salesPerformance.title')}
                 </CardTitle>
-                <Badge variant="secondary">Generated</Badge>
+                <Badge variant="secondary">{t('pages.reports.badges.generated')}</Badge>
               </div>
               <CardDescription>
-                Quarterly sales analysis with revenue trends
+                {t('pages.reports.reportTypes.salesPerformance.description')}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 <div className="text-sm text-gray-500">
-                  Generated on: Dec 15, 2024
+                  {t('pages.reports.generatedOn')}: Dec 15, 2024
                 </div>
                 <div className="flex gap-2">
                   <Button size="sm" variant="outline">
                     <FileText className="w-4 h-4 mr-1" />
-                    View
+                    {t('pages.reports.view')}
                   </Button>
                   <Button size="sm" variant="outline">
                     <Download className="w-4 h-4 mr-1" />
-                    Download
+                    {t('pages.reports.download')}
                   </Button>
                   <Button size="sm" variant="outline">
                     <Share className="w-4 h-4 mr-1" />
-                    Share
+                    {t('pages.reports.share')}
                   </Button>
                 </div>
               </div>
@@ -97,27 +100,27 @@ export default function ReportsPage() {
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2">
                   <FileText className="w-5 h-5" />
-                  Customer Analytics
+                  {t('pages.reports.reportTypes.customerAnalytics.title')}
                 </CardTitle>
-                <Badge>Scheduled</Badge>
+                <Badge>{t('pages.reports.badges.scheduled')}</Badge>
               </div>
               <CardDescription>
-                Monthly customer behavior and engagement metrics
+                {t('pages.reports.reportTypes.customerAnalytics.description')}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 <div className="text-sm text-gray-500">
-                  Next run: Dec 31, 2024
+                  {t('pages.reports.nextRun')}: Dec 31, 2024
                 </div>
                 <div className="flex gap-2">
                   <Button size="sm" variant="outline">
                     <FileText className="w-4 h-4 mr-1" />
-                    View Template
+                    {t('pages.reports.viewTemplate')}
                   </Button>
                   <Button size="sm" variant="outline">
                     <Calendar className="w-4 h-4 mr-1" />
-                    Edit Schedule
+                    {t('pages.reports.editSchedule')}
                   </Button>
                 </div>
               </div>
@@ -129,27 +132,27 @@ export default function ReportsPage() {
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2">
                   <TrendingUp className="w-5 h-5" />
-                  Financial Summary
+                  {t('pages.reports.reportTypes.financialSummary.title')}
                 </CardTitle>
-                <Badge variant="destructive">Draft</Badge>
+                <Badge variant="destructive">{t('pages.reports.badges.draft')}</Badge>
               </div>
               <CardDescription>
-                Comprehensive financial overview and projections
+                {t('pages.reports.reportTypes.financialSummary.description')}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 <div className="text-sm text-gray-500">
-                  Last modified: 3 days ago
+                  {t('pages.reports.lastModified')}: 3 days ago
                 </div>
                 <div className="flex gap-2">
                   <Button size="sm">
                     <FileText className="w-4 h-4 mr-1" />
-                    Continue Editing
+                    {t('pages.reports.continueEditing')}
                   </Button>
                   <Button size="sm" variant="outline">
                     <Share className="w-4 h-4 mr-1" />
-                    Preview
+                    {t('pages.reports.preview')}
                   </Button>
                 </div>
               </div>
@@ -161,27 +164,27 @@ export default function ReportsPage() {
               <div className="flex items-center justify-between">
                 <CardTitle className="flex items-center gap-2">
                   <FileText className="w-5 h-5" />
-                  Weekly Operations
+                  {t('pages.reports.reportTypes.weeklyOperations.title')}
                 </CardTitle>
-                <Badge variant="secondary">Generated</Badge>
+                <Badge variant="secondary">{t('pages.reports.badges.generated')}</Badge>
               </div>
               <CardDescription>
-                Operational metrics and KPI tracking
+                {t('pages.reports.reportTypes.weeklyOperations.description')}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
                 <div className="text-sm text-gray-500">
-                  Generated on: Dec 22, 2024
+                  {t('pages.reports.generatedOn')}: Dec 22, 2024
                 </div>
                 <div className="flex gap-2">
                   <Button size="sm" variant="outline">
                     <FileText className="w-4 h-4 mr-1" />
-                    View
+                    {t('pages.reports.view')}
                   </Button>
                   <Button size="sm" variant="outline">
                     <Download className="w-4 h-4 mr-1" />
-                    Download
+                    {t('pages.reports.download')}
                   </Button>
                 </div>
               </div>
@@ -190,19 +193,19 @@ export default function ReportsPage() {
           </ContentGrid>
 
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold">Quick Actions</h3>
+            <h3 className="text-xl font-semibold">{t('pages.reports.quickActions')}</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <Button variant="outline" className="justify-start">
                 <TrendingUp className="w-4 h-4 mr-2" />
-                Sales Dashboard Report
+                {t('pages.reports.salesDashboardReport')}
               </Button>
               <Button variant="outline" className="justify-start">
                 <FileText className="w-4 h-4 mr-2" />
-                Custom Data Report
+                {t('pages.reports.customDataReport')}
               </Button>
               <Button variant="outline" className="justify-start">
                 <Calendar className="w-4 h-4 mr-2" />
-                Recurring Report Setup
+                {t('pages.reports.recurringReportSetup')}
               </Button>
             </div>
           </div>

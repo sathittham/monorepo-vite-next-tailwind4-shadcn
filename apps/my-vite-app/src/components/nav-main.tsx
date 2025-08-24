@@ -11,6 +11,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@workspace/ui/components/sidebar"
+import { useTranslation } from "react-i18next"
 
 export function NavMain({
   items,
@@ -21,17 +22,19 @@ export function NavMain({
     icon?: Icon
   }[]
 }) {
+  const { t } = useTranslation()
+  
   return (
     <SidebarGroup>
       <SidebarGroupContent className="flex flex-col gap-2">
         <SidebarMenu>
           <SidebarMenuItem className="flex items-center gap-2">
             <SidebarMenuButton
-              tooltip="Quick Create"
+              tooltip={t('common.quickCreate')}
               className="bg-primary text-primary-foreground hover:bg-primary/90 hover:text-primary-foreground active:bg-primary/90 active:text-primary-foreground min-w-8 duration-200 ease-linear"
             >
               <IconCirclePlusFilled />
-              <span>Quick Create</span>
+              <span>{t('common.quickCreate')}</span>
             </SidebarMenuButton>
             <Button
               size="icon"
@@ -39,7 +42,7 @@ export function NavMain({
               variant="outline"
             >
               <IconMail />
-              <span className="sr-only">Inbox</span>
+              <span className="sr-only">{t('common.inbox')}</span>
             </Button>
           </SidebarMenuItem>
         </SidebarMenu>

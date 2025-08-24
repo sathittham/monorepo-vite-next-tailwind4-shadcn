@@ -9,17 +9,20 @@ import { Label } from "@workspace/ui/components/label"
 import { Separator } from "@workspace/ui/components/separator"
 import { Badge } from "@workspace/ui/components/badge"
 import { User, Bell, Shield, Palette, Key } from "lucide-react"
+import { useTranslation } from "react-i18next"
 
 export default function SettingsPage() {
+  const { t } = useTranslation()
+  
   const breadcrumbs = [
     { label: "STM23", href: "/" },
-    { label: "Settings", current: true }
+    { label: t('common.settings'), current: true }
   ]
 
   const headerActions = (
     <>
       <Button variant="ghost" size="sm" className="hidden sm:flex">
-        Actions
+        {t('common.actions')}
       </Button>
       <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
         <a
@@ -28,7 +31,7 @@ export default function SettingsPage() {
           target="_blank"
           className="dark:text-foreground"
         >
-          GitHub
+          {t('common.github')}
         </a>
       </Button>
     </>
@@ -41,8 +44,8 @@ export default function SettingsPage() {
       headerActions={headerActions}
     >
       <PageHeader
-        title="Settings"
-        description="Manage your account preferences, security, and application settings."
+        title={t('pages.settings.title')}
+        description={t('pages.settings.description')}
       />
 
       <PageContent>
@@ -52,26 +55,26 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <User className="w-5 h-5" />
-                Profile Settings
+                {t('pages.settings.profileSettings.title')}
               </CardTitle>
               <CardDescription>
-                Update your personal information and preferences
+                {t('pages.settings.profileSettings.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label htmlFor="name">Full Name</Label>
+                <Label htmlFor="name">{t('pages.settings.profileSettings.fullName')}</Label>
                 <Input id="name" defaultValue="John Doe" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email">Email Address</Label>
+                <Label htmlFor="email">{t('pages.settings.profileSettings.emailAddress')}</Label>
                 <Input id="email" type="email" defaultValue="john.doe@example.com" />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="company">Company</Label>
+                <Label htmlFor="company">{t('pages.settings.profileSettings.company')}</Label>
                 <Input id="company" defaultValue="Sathittham.com" />
               </div>
-              <Button>Save Changes</Button>
+              <Button>{t('pages.settings.profileSettings.saveChanges')}</Button>
             </CardContent>
           </Card>
 
@@ -79,37 +82,37 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Bell className="w-5 h-5" />
-                Notifications
+                {t('pages.settings.notifications.title')}
               </CardTitle>
               <CardDescription>
-                Configure how you receive notifications
+                {t('pages.settings.notifications.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium">Email Notifications</p>
-                  <p className="text-sm text-gray-500">Receive updates via email</p>
+                  <p className="font-medium">{t('pages.settings.notifications.emailNotifications')}</p>
+                  <p className="text-sm text-gray-500">{t('pages.settings.notifications.emailNotificationsDesc')}</p>
                 </div>
-                <Badge>Enabled</Badge>
+                <Badge>{t('pages.settings.notifications.enabled')}</Badge>
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium">Push Notifications</p>
-                  <p className="text-sm text-gray-500">Browser push notifications</p>
+                  <p className="font-medium">{t('pages.settings.notifications.pushNotifications')}</p>
+                  <p className="text-sm text-gray-500">{t('pages.settings.notifications.pushNotificationsDesc')}</p>
                 </div>
-                <Badge variant="secondary">Disabled</Badge>
+                <Badge variant="secondary">{t('pages.settings.notifications.disabled')}</Badge>
               </div>
               <Separator />
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="font-medium">Weekly Reports</p>
-                  <p className="text-sm text-gray-500">Summary of weekly activity</p>
+                  <p className="font-medium">{t('pages.settings.notifications.weeklyReports')}</p>
+                  <p className="text-sm text-gray-500">{t('pages.settings.notifications.weeklyReportsDesc')}</p>
                 </div>
-                <Badge>Enabled</Badge>
+                <Badge>{t('pages.settings.notifications.enabled')}</Badge>
               </div>
-              <Button variant="outline">Configure</Button>
+              <Button variant="outline">{t('pages.settings.notifications.configure')}</Button>
             </CardContent>
           </Card>
 
@@ -117,34 +120,34 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Shield className="w-5 h-5" />
-                Security
+                {t('pages.settings.security.title')}
               </CardTitle>
               <CardDescription>
-                Manage your account security settings
+                {t('pages.settings.security.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label>Two-Factor Authentication</Label>
+                <Label>{t('pages.settings.security.twoFactor')}</Label>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Add extra security to your account</span>
-                  <Button size="sm">Setup</Button>
+                  <span className="text-sm text-gray-500">{t('pages.settings.security.twoFactorDesc')}</span>
+                  <Button size="sm">{t('pages.settings.security.setup')}</Button>
                 </div>
               </div>
               <Separator />
               <div className="space-y-2">
-                <Label>Password</Label>
+                <Label>{t('pages.settings.security.password')}</Label>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Last changed 30 days ago</span>
-                  <Button size="sm" variant="outline">Change</Button>
+                  <span className="text-sm text-gray-500">{t('pages.settings.security.passwordDesc')}</span>
+                  <Button size="sm" variant="outline">{t('pages.settings.security.change')}</Button>
                 </div>
               </div>
               <Separator />
               <div className="space-y-2">
-                <Label>Active Sessions</Label>
+                <Label>{t('pages.settings.security.activeSessions')}</Label>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">3 active sessions</span>
-                  <Button size="sm" variant="outline">Manage</Button>
+                  <span className="text-sm text-gray-500">{t('pages.settings.security.activeSessionsDesc')}</span>
+                  <Button size="sm" variant="outline">{t('pages.settings.security.manage')}</Button>
                 </div>
               </div>
             </CardContent>
@@ -154,35 +157,35 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Palette className="w-5 h-5" />
-                Appearance
+                {t('pages.settings.appearance.title')}
               </CardTitle>
               <CardDescription>
-                Customize the look and feel of your interface
+                {t('pages.settings.appearance.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="space-y-2">
-                <Label>Theme</Label>
+                <Label>{t('pages.settings.appearance.theme')}</Label>
                 <div className="flex gap-2">
-                  <Button size="sm" variant="outline">Light</Button>
-                  <Button size="sm">Dark</Button>
-                  <Button size="sm" variant="outline">Auto</Button>
+                  <Button size="sm" variant="outline">{t('pages.settings.appearance.light')}</Button>
+                  <Button size="sm">{t('pages.settings.appearance.dark')}</Button>
+                  <Button size="sm" variant="outline">{t('pages.settings.appearance.auto')}</Button>
                 </div>
               </div>
               <Separator />
               <div className="space-y-2">
-                <Label>Language</Label>
+                <Label>{t('pages.settings.appearance.language')}</Label>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm">English (US)</span>
-                  <Button size="sm" variant="outline">Change</Button>
+                  <span className="text-sm">{t('pages.settings.appearance.languageValue')}</span>
+                  <Button size="sm" variant="outline">{t('pages.settings.security.change')}</Button>
                 </div>
               </div>
               <Separator />
               <div className="space-y-2">
-                <Label>Sidebar</Label>
+                <Label>{t('pages.settings.appearance.sidebar')}</Label>
                 <div className="flex items-center justify-between">
-                  <span className="text-sm text-gray-500">Collapsed by default</span>
-                  <Badge variant="secondary">Disabled</Badge>
+                  <span className="text-sm text-gray-500">{t('pages.settings.appearance.sidebarDesc')}</span>
+                  <Badge variant="secondary">{t('pages.settings.notifications.disabled')}</Badge>
                 </div>
               </div>
             </CardContent>
@@ -193,36 +196,36 @@ export default function SettingsPage() {
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
                 <Key className="w-5 h-5" />
-                API Keys
+                {t('pages.settings.apiKeys.title')}
               </CardTitle>
               <CardDescription>
-                Manage your API keys for integrations and third-party access
+                {t('pages.settings.apiKeys.description')}
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-4">
               <div className="flex items-center justify-between p-4 border rounded-lg">
                 <div>
-                  <p className="font-medium">Production API Key</p>
+                  <p className="font-medium">{t('pages.settings.apiKeys.productionKey')}</p>
                   <p className="text-sm text-gray-500 font-mono">ak_prod_••••••••••••3a7f</p>
                 </div>
                 <div className="flex gap-2">
-                  <Button size="sm" variant="outline">Regenerate</Button>
-                  <Button size="sm" variant="outline">Revoke</Button>
+                  <Button size="sm" variant="outline">{t('pages.settings.apiKeys.regenerate')}</Button>
+                  <Button size="sm" variant="outline">{t('pages.settings.apiKeys.revoke')}</Button>
                 </div>
               </div>
               <div className="flex items-center justify-between p-4 border rounded-lg">
                 <div>
-                  <p className="font-medium">Development API Key</p>
+                  <p className="font-medium">{t('pages.settings.apiKeys.developmentKey')}</p>
                   <p className="text-sm text-gray-500 font-mono">ak_dev_••••••••••••9b2c</p>
                 </div>
                 <div className="flex gap-2">
-                  <Button size="sm" variant="outline">Regenerate</Button>
-                  <Button size="sm" variant="outline">Revoke</Button>
+                  <Button size="sm" variant="outline">{t('pages.settings.apiKeys.regenerate')}</Button>
+                  <Button size="sm" variant="outline">{t('pages.settings.apiKeys.revoke')}</Button>
                 </div>
               </div>
               <Button variant="outline">
                 <Key className="w-4 h-4 mr-2" />
-                Create New API Key
+                {t('pages.settings.apiKeys.createNew')}
               </Button>
             </CardContent>
           </Card>

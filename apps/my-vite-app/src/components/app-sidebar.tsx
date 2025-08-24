@@ -12,6 +12,7 @@ import {
   IconSettings,
   IconTemplate,
 } from "@tabler/icons-react"
+import { useTranslation } from "react-i18next"
 
 import { NavMain } from "@/components/nav-main"
 import { NavSecondary } from "@/components/nav-secondary"
@@ -26,64 +27,67 @@ import {
   SidebarMenuItem,
 } from "@workspace/ui/components/sidebar"
 
-const data = {
-  user: {
-    name: "sathittham",
-    email: "hello@sathittham.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
-  navMain: [
-    {
-      title: "Dashboard",
-      url: "/dashboard",
-      icon: IconDashboard,
-    },
-    {
-      title: "Data Library",
-      url: "/data-library",
-      icon: IconDatabase,
-    },
-    {
-      title: "Reports",
-      url: "/reports",
-      icon: IconReport,
-    },
-    {
-      title: "Layout Examples",
-      url: "/layout-examples",
-      icon: IconTemplate,
-    },
-    {
-      title: "Empty States",
-      url: "/empty-example",
-      icon: IconInnerShadowTop,
-    },
-    {
-      title: "Simple Page",
-      url: "/simple-page",
-      icon: IconFileDescription,
-    },
-  ],
-  navSecondary: [
-    {
-      title: "Settings",
-      url: "/settings",
-      icon: IconSettings,
-    },
-    {
-      title: "Get Help",
-      url: "/help",
-      icon: IconHelp,
-    },
-    {
-      title: "Search",
-      url: "/search",
-      icon: IconSearch,
-    },
-  ],
-}
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { t } = useTranslation()
+
+  const data = {
+    user: {
+      name: "sathittham",
+      email: "hello@sathittham.com",
+      avatar: "/avatars/shadcn.jpg",
+    },
+    navMain: [
+      {
+        title: t('navigation.dashboard'),
+        url: "/dashboard",
+        icon: IconDashboard,
+      },
+      {
+        title: t('navigation.dataLibrary'),
+        url: "/data-library",
+        icon: IconDatabase,
+      },
+      {
+        title: t('navigation.reports'),
+        url: "/reports",
+        icon: IconReport,
+      },
+      {
+        title: t('navigation.layoutExamples'),
+        url: "/layout-examples",
+        icon: IconTemplate,
+      },
+      {
+        title: t('navigation.emptyStates'),
+        url: "/empty-example",
+        icon: IconInnerShadowTop,
+      },
+      {
+        title: t('navigation.simplePage'),
+        url: "/simple-page",
+        icon: IconFileDescription,
+      },
+    ],
+    navSecondary: [
+      {
+        title: t('common.settings'),
+        url: "/settings",
+        icon: IconSettings,
+      },
+      {
+        title: t('common.help'),
+        url: "/help",
+        icon: IconHelp,
+      },
+      {
+        title: t('common.search'),
+        url: "/search",
+        icon: IconSearch,
+      },
+    ],
+  }
+
   return (
     <Sidebar collapsible="offcanvas" {...props}>
       <SidebarHeader>

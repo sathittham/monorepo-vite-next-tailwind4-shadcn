@@ -73,7 +73,12 @@ A modern, full-stack monorepo template featuring Next.js, Vite, Tailwind CSS 4, 
 ### Available Applications
 
 - **Next.js App** - http://localhost:3000
-- **Vite App** - http://localhost:5173
+  - Modern landing page with hero section, features, and footer
+  - Built with shadcn/ui components and responsive design
+- **Vite App** - http://localhost:5176
+  - Enterprise dashboard with sidebar navigation
+  - Includes data library, reports, and analytics pages
+  - Comprehensive component system with consistent layouts
 
 ## 🛠️ Development
 
@@ -91,20 +96,62 @@ A modern, full-stack monorepo template featuring Next.js, Vite, Tailwind CSS 4, 
 #### Next.js Application (`apps/my-next-app`)
 - **Framework**: Next.js 15 with App Router
 - **Styling**: Tailwind CSS 4 + shadcn/ui
-- **Features**: Server Components, TypeScript, ESLint
+- **Features**: 
+  - Modern landing page with hero section
+  - Responsive navigation and footer
+  - Server Components, TypeScript, ESLint
+  - GitHub integration and social links
 - **Development**: `pnpm dev --filter my-next-app`
 - **Build**: `pnpm build --filter my-next-app`
 
 #### Vite Application (`apps/my-vite-app`)
 - **Framework**: Vite + React 19
+- **Routing**: React Router v6 with nested layouts
 - **Styling**: Tailwind CSS 4 with custom utilities
-- **Features**: Hot Module Replacement, TypeScript, ESLint
+- **Features**:
+  - Enterprise dashboard with sidebar navigation
+  - Consistent page layouts with breadcrumb navigation
+  - Multiple pages: Dashboard, Data Library, Reports, Examples
+  - Reusable component system with shared UI package
+  - 404 error handling and empty states
+  - Hot Module Replacement, TypeScript, ESLint
 - **Development**: `pnpm dev --filter my-vite-app`
 - **Build**: `pnpm build --filter my-vite-app`
 
-## 🎨 UI Components
+## 🎨 UI Components & Architecture
 
-This monorepo uses [shadcn/ui](https://ui.shadcn.com/) for consistent, accessible components.
+This monorepo uses [shadcn/ui](https://ui.shadcn.com/) for consistent, accessible components with a comprehensive component system.
+
+### Component Architecture
+
+The Vite application features a sophisticated layout system:
+
+- **PageLayout**: Main layout component with sidebar, header, and content areas
+- **SiteHeader**: Consistent header with breadcrumbs and action buttons
+- **PageContent**: Content wrapper with consistent padding
+- **ContentGrid**: Responsive grid system for organized content
+- **BreadcrumbNav**: Hierarchical navigation with Home icon and separators
+
+### Available Components
+
+The shared UI package (`packages/ui`) includes:
+
+**Navigation & Layout:**
+- Sidebar, App Sidebar, Navigation Menu, Breadcrumb
+- Site Header, Page Header, Page Content
+
+**Interactive Components:**
+- Button, Input, Textarea, Select, Checkbox, Radio Group
+- Dialog, Sheet, Popover, Hover Card, Tooltip
+- Command, Context Menu, Dropdown Menu
+
+**Display Components:**
+- Card, Badge, Avatar, Separator, Skeleton
+- Alert, Alert Dialog, Data Table, Chart
+- Progress, Slider, Tabs, Accordion
+
+**Form Components:**
+- Form, Label, Input OTP, Calendar, Date Picker
 
 ### Adding New Components
 
@@ -130,17 +177,34 @@ Import components from the shared UI package:
 ```tsx
 import { Button } from "@workspace/ui/components/button"
 import { Card, CardContent, CardHeader } from "@workspace/ui/components/card"
+import { PageLayout } from "@/components/page-layout"
+import { PageHeader } from "@/components/page-header"
 
 export default function MyComponent() {
+  const breadcrumbs = [
+    { label: "STM23", href: "/" },
+    { label: "My Page", current: true }
+  ]
+
   return (
-    <Card>
-      <CardHeader>
-        <h2>Welcome</h2>
-      </CardHeader>
-      <CardContent>
-        <Button>Get Started</Button>
-      </CardContent>
-    </Card>
+    <PageLayout 
+      fullWidth
+      headerBreadcrumbs={breadcrumbs}
+      headerActions={<Button>Action</Button>}
+    >
+      <PageHeader
+        title="My Page"
+        description="Example page with consistent layout"
+      />
+      <Card>
+        <CardHeader>
+          <h2>Welcome</h2>
+        </CardHeader>
+        <CardContent>
+          <Button>Get Started</Button>
+        </CardContent>
+      </Card>
+    </PageLayout>
   )
 }
 ```
@@ -270,4 +334,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-Built with ❤️ by [Sathittham](https://github.com/sathittham)
+Built with ❤️ by [Sathittham](https://sathittham.com)

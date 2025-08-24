@@ -1,32 +1,6 @@
 import Link from "next/link"
 import { GitFork, Twitter, Linkedin, Mail } from "lucide-react"
-
-const footerLinks = {
-  product: [
-    { name: "Features", href: "#features" },
-    { name: "Pricing", href: "#pricing" },
-    { name: "Documentation", href: "/docs" },
-    { name: "Changelog", href: "/changelog" }
-  ],
-  company: [
-    { name: "About", href: "/about" },
-    { name: "Blog", href: "/blog" },
-    { name: "Careers", href: "/careers" },
-    { name: "Contact", href: "/contact" }
-  ],
-  resources: [
-    { name: "Community", href: "/community" },
-    { name: "Help Center", href: "/help" },
-    { name: "Support", href: "/support" },
-    { name: "Status", href: "/status" }
-  ],
-  legal: [
-    { name: "Privacy", href: "/privacy" },
-    { name: "Terms", href: "/terms" },
-    { name: "Cookie Policy", href: "/cookies" },
-    { name: "Licenses", href: "/licenses" }
-  ]
-}
+import { useTranslations } from 'next-intl'
 
 const socialLinks = [
   { name: "GitHub", icon: GitFork, href: "https://github.com/sathittham/monorepo-vite-next-tailwind4-shadcn" },
@@ -36,6 +10,34 @@ const socialLinks = [
 ]
 
 export function Footer() {
+  const t = useTranslations('components.footer')
+  
+  const footerLinks = {
+    product: [
+      { name: t('links.features'), href: "#features" },
+      { name: t('links.pricing'), href: "#pricing" },
+      { name: t('links.documentation'), href: "/docs" },
+      { name: t('links.changelog'), href: "/changelog" }
+    ],
+    company: [
+      { name: t('links.about'), href: "/about" },
+      { name: t('links.blog'), href: "/blog" },
+      { name: t('links.careers'), href: "/careers" },
+      { name: t('links.contact'), href: "/contact" }
+    ],
+    resources: [
+      { name: t('links.community'), href: "/community" },
+      { name: t('links.helpCenter'), href: "/help" },
+      { name: t('links.support'), href: "/support" },
+      { name: t('links.status'), href: "/status" }
+    ],
+    legal: [
+      { name: t('links.privacy'), href: "/privacy" },
+      { name: t('links.terms'), href: "/terms" },
+      { name: t('links.cookiePolicy'), href: "/cookies" },
+      { name: t('links.licenses'), href: "/licenses" }
+    ]
+  }
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto px-4 py-16">
@@ -46,11 +48,10 @@ export function Footer() {
               <div className="h-8 w-8 bg-primary rounded-lg flex items-center justify-center">
                 <span className="text-primary-foreground font-bold text-sm">M</span>
               </div>
-              <span className="font-bold text-xl">Monorepo</span>
+              <span className="font-bold text-xl">{t('monorepo')}</span>
             </Link>
             <p className="text-muted-foreground mb-6 max-w-md">
-              A modern monorepo starter with everything you need to build beautiful, 
-              performant applications with Vite, Next.js, and shadcn/ui.
+              {t('brandDescription')}
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((social) => {
@@ -73,7 +74,7 @@ export function Footer() {
 
           {/* Links Sections */}
           <div>
-            <h3 className="font-semibold mb-4">Product</h3>
+            <h3 className="font-semibold mb-4">{t('product')}</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.name}>
@@ -89,7 +90,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Company</h3>
+            <h3 className="font-semibold mb-4">{t('company')}</h3>
             <ul className="space-y-3">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -105,7 +106,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
+            <h3 className="font-semibold mb-4">{t('resources')}</h3>
             <ul className="space-y-3">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
@@ -121,7 +122,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold mb-4">Legal</h3>
+            <h3 className="font-semibold mb-4">{t('legal')}</h3>
             <ul className="space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>
@@ -150,10 +151,10 @@ export function Footer() {
             >
               Sathittham.com
             </a>{" "}
-            All rights reserved.
+            {t('copyright')}
           </p>
           <p className="text-muted-foreground text-sm mt-4 md:mt-0">
-            Built with ❤️ using Next.js and shadcn/ui
+            {t('builtWith')}
           </p>
         </div>
       </div>

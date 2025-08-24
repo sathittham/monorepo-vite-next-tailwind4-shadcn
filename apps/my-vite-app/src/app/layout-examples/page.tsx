@@ -4,17 +4,20 @@ import { PageContent } from "@/components/page-content"
 import { ContentGrid } from "@/components/content-grid"
 import { ExampleCard } from "@/components/example-card"
 import { Button } from "@workspace/ui/components/button"
+import { useTranslation } from "react-i18next"
 
 export default function LayoutExamplesPage() {
+  const { t } = useTranslation()
+  
   const breadcrumbs = [
     { label: "STM23", href: "/" },
-    { label: "Layout Examples", current: true }
+    { label: t('navigation.layoutExamples'), current: true }
   ]
 
   const headerActions = (
     <>
       <Button variant="ghost" size="sm" className="hidden sm:flex">
-        Actions
+        {t('common.actions')}
       </Button>
       <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
         <a
@@ -23,7 +26,7 @@ export default function LayoutExamplesPage() {
           target="_blank"
           className="dark:text-foreground"
         >
-          GitHub
+          {t('common.github')}
         </a>
       </Button>
     </>
@@ -36,55 +39,55 @@ export default function LayoutExamplesPage() {
       headerActions={headerActions}
     >
       <PageHeader
-        title="Page Layout Examples"
-        description="Demonstrating different configurations of the PageLayout component."
+        title={t('pages.layoutExamples.title')}
+        description={t('pages.layoutExamples.description')}
       />
 
       <PageContent>
         <ContentGrid>
           <ExampleCard
-            title="Default Layout"
-            description="Standard layout with sidebar and header"
+            title={t('pages.layoutExamples.examples.defaultLayout.title')}
+            description={t('pages.layoutExamples.examples.defaultLayout.description')}
             code="<PageLayout>...</PageLayout>"
           />
           
           <ExampleCard
-            title="No Sidebar"
-            description="Full width layout without sidebar"
+            title={t('pages.layoutExamples.examples.noSidebar.title')}
+            description={t('pages.layoutExamples.examples.noSidebar.description')}
             code="<PageLayout showSidebar={false}>"
           />
           
           <ExampleCard
-            title="Custom Gap"
-            description="Different spacing between content sections"
+            title={t('pages.layoutExamples.examples.customGap.title')}
+            description={t('pages.layoutExamples.examples.customGap.description')}
             code='<PageLayout gap="lg">'
           />
           
           <ExampleCard
-            title="No Header"
-            description="Layout without the site header"
+            title={t('pages.layoutExamples.examples.noHeader.title')}
+            description={t('pages.layoutExamples.examples.noHeader.description')}
             code="<PageLayout showHeader={false}>"
           />
           
           <ExampleCard
-            title="Floating Sidebar"
-            description="Sidebar with floating variant"
+            title={t('pages.layoutExamples.examples.floatingSidebar.title')}
+            description={t('pages.layoutExamples.examples.floatingSidebar.description')}
             code='<PageLayout sidebarVariant="floating">'
           />
           
           <ExampleCard
-            title="No Container Padding"
-            description="Remove default padding for custom layouts"
+            title={t('pages.layoutExamples.examples.noContainerPadding.title')}
+            description={t('pages.layoutExamples.examples.noContainerPadding.description')}
             code="<PageLayout containerPadding={false}>"
           />
         </ContentGrid>
 
         <div className="space-y-4">
-          <h2 className="text-2xl font-semibold">Available Components</h2>
+          <h2 className="text-2xl font-semibold">{t('pages.layoutExamples.availableComponents')}</h2>
           
           <div className="space-y-6">
             <div>
-              <h3 className="text-lg font-semibold mb-2">PageLayout Props</h3>
+              <h3 className="text-lg font-semibold mb-2">{t('pages.layoutExamples.pageLayoutProps')}</h3>
               <div className="bg-gray-50 p-6 rounded-lg dark:bg-gray-800">
                 <pre className="text-sm overflow-x-auto">
 {`interface PageLayoutProps {
@@ -102,7 +105,7 @@ export default function LayoutExamplesPage() {
             </div>
 
             <div>
-              <h3 className="text-lg font-semibold mb-2">PageContent Props</h3>
+              <h3 className="text-lg font-semibold mb-2">{t('pages.layoutExamples.pageContentProps')}</h3>
               <div className="bg-gray-50 p-6 rounded-lg dark:bg-gray-800">
                 <pre className="text-sm overflow-x-auto">
 {`interface PageContentProps {
@@ -111,7 +114,7 @@ export default function LayoutExamplesPage() {
   padding?: "default" | "none" | "sm" | "lg"  // Default: "default"
 }
 
-// Usage Examples:
+// {t('pages.layoutExamples.usageExamples')}:
 <PageContent>              // Default: px-4 lg:px-6
 <PageContent padding="lg"> // Larger padding: px-6 lg:px-8  
 <PageContent padding="none"> // No horizontal padding`}
@@ -122,8 +125,8 @@ export default function LayoutExamplesPage() {
         </div>
 
         <div className="flex gap-4">
-          <Button>Action Button</Button>
-          <Button variant="outline">Secondary Action</Button>
+          <Button>{t('pages.layoutExamples.actionButton')}</Button>
+          <Button variant="outline">{t('pages.layoutExamples.secondaryAction')}</Button>
         </div>
       </PageContent>
     </PageLayout>

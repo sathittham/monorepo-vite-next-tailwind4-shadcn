@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import { ChartAreaInteractive } from "@/components/chart-area-interactive"
 import { DataTable } from "@/components/data-table"
 import { SectionCards } from "@/components/section-cards"
@@ -9,15 +10,17 @@ import { Button } from "@workspace/ui/components/button"
 import data from "./data.json"
 
 export default function Page() {
+  const { t } = useTranslation()
+  
   const breadcrumbs = [
     { label: "STM23", href: "/" },
-    { label: "Dashboard", current: true }
+    { label: t('navigation.dashboard'), current: true }
   ]
 
   const headerActions = (
     <>
       <Button variant="ghost" size="sm" className="hidden sm:flex">
-        Refresh
+        {t('common.refresh')}
       </Button>
       <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
         <a
@@ -26,7 +29,7 @@ export default function Page() {
           target="_blank"
           className="dark:text-foreground"
         >
-          GitHub
+          {t('common.github')}
         </a>
       </Button>
     </>
@@ -39,8 +42,8 @@ export default function Page() {
       headerActions={headerActions}
     >
       <PageHeader
-        title="Dashboard"
-        description="Overview of your project metrics and performance data."
+        title={t('pages.dashboard.title')}
+        description={t('pages.dashboard.description')}
       />
       <SectionCards />
       <PageContent>

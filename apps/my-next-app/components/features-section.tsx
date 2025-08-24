@@ -1,71 +1,80 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@workspace/ui/components/card"
 import { Zap, Shield, Palette, Code, Globe, Rocket } from "lucide-react"
-
-const features = [
-  {
-    icon: <Zap className="h-8 w-8" />,
-    title: "Lightning Fast",
-    description: "Built with Vite for instant HMR and optimized builds. Experience blazing fast development."
-  },
-  {
-    icon: <Shield className="h-8 w-8" />,
-    title: "Type Safe",
-    description: "Full TypeScript support across the entire monorepo with strict type checking."
-  },
-  {
-    icon: <Palette className="h-8 w-8" />,
-    title: "Beautiful UI",
-    description: "Pre-built components with shadcn/ui and Tailwind CSS for stunning interfaces."
-  },
-  {
-    icon: <Code className="h-8 w-8" />,
-    title: "Developer Experience",
-    description: "Modern tooling, hot reload, and excellent developer experience out of the box."
-  },
-  {
-    icon: <Globe className="h-8 w-8" />,
-    title: "Universal",
-    description: "Works with both Vite and Next.js applications in a single monorepo setup."
-  },
-  {
-    icon: <Rocket className="h-8 w-8" />,
-    title: "Production Ready",
-    description: "Optimized builds, performance monitoring, and deployment-ready configuration."
-  }
-]
+import { useTranslations } from 'next-intl'
+import { AnimatedSection, AnimatedItem } from "./animated-section"
 
 export function FeaturesSection() {
+  const t = useTranslations('components.features')
+
+  const features = [
+    {
+      icon: <Zap className="h-8 w-8" />,
+      title: t('lightningFast'),
+      description: t('lightningFastDesc')
+    },
+    {
+      icon: <Shield className="h-8 w-8" />,
+      title: t('typeSafe'),
+      description: t('typeSafeDesc')
+    },
+    {
+      icon: <Palette className="h-8 w-8" />,
+      title: t('beautifulUI'),
+      description: t('beautifulUIDesc')
+    },
+    {
+      icon: <Code className="h-8 w-8" />,
+      title: t('developerExperience'),
+      description: t('developerExperienceDesc')
+    },
+    {
+      icon: <Globe className="h-8 w-8" />,
+      title: t('universal'),
+      description: t('universalDesc')
+    },
+    {
+      icon: <Rocket className="h-8 w-8" />,
+      title: t('productionReady'),
+      description: t('productionReadyDesc')
+    }
+  ]
+
   return (
-    <section className="container mx-auto px-4 py-24">
-      <div className="text-center mb-16">
+    <section id="features" className="container mx-auto px-4 py-24">
+      <AnimatedSection direction="up" className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          Everything you need to build modern apps
+          {t('title')}
         </h2>
         <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-          Our monorepo starter comes with all the tools and components you need to build beautiful, 
-          performant applications quickly.
+          {t('subtitle')}
         </p>
-      </div>
+      </AnimatedSection>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <AnimatedSection 
+        direction="up" 
+        stagger={0.1}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+      >
         {features.map((feature, index) => (
-          <Card key={index} className="border-2 hover:border-primary/20 transition-colors">
-            <CardHeader>
-              <div className="text-primary mb-2">
-                {feature.icon}
-              </div>
-              <CardTitle className="text-xl">
-                {feature.title}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <CardDescription className="text-base">
-                {feature.description}
-              </CardDescription>
-            </CardContent>
-          </Card>
+          <AnimatedItem key={index}>
+            <Card className="border-2 hover:border-primary/20 hover:shadow-lg hover:scale-105 transition-all duration-300 group h-full">
+              <CardHeader>
+                <div className="text-primary mb-2 group-hover:scale-110 transition-transform duration-300">
+                  {feature.icon}
+                </div>
+                <CardTitle className="text-xl">
+                  {feature.title}
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-base">
+                  {feature.description}
+                </CardDescription>
+              </CardContent>
+            </Card>
+          </AnimatedItem>
         ))}
-      </div>
+      </AnimatedSection>
     </section>
   )
 }

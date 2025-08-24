@@ -30,6 +30,7 @@ import {
   useSidebar,
 } from "@workspace/ui/components/sidebar"
 import { useAuth } from "@/contexts/auth-context"
+import { useTranslation } from "react-i18next"
 
 export function NavUser({
   user,
@@ -40,6 +41,7 @@ export function NavUser({
     avatar: string
   }
 }) {
+  const { t } = useTranslation()
   const { isMobile } = useSidebar()
   const { logout } = useAuth()
   const navigate = useNavigate()
@@ -95,21 +97,21 @@ export function NavUser({
             <DropdownMenuGroup>
               <DropdownMenuItem>
                 <IconUserCircle />
-                Account
+                {t('common.account')}
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <IconCreditCard />
-                Billing
+                {t('common.billing')}
               </DropdownMenuItem>
               <DropdownMenuItem>
                 <IconNotification />
-                Notifications
+                {t('common.notifications')}
               </DropdownMenuItem>
             </DropdownMenuGroup>
             <DropdownMenuSeparator />
             <DropdownMenuItem onClick={handleLogout}>
               <IconLogout />
-              Log out
+              {t('common.logOut')}
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

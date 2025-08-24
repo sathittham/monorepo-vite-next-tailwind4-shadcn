@@ -3,6 +3,9 @@ import { Button } from "@workspace/ui/components/button"
 import { Separator } from "@workspace/ui/components/separator"
 import { SidebarTrigger } from "@workspace/ui/components/sidebar"
 import { BreadcrumbNav, type BreadcrumbItem } from "./breadcrumb-nav"
+import { ViteLanguageSwitcher } from "./vite-language-switcher"
+import { ViteThemeSwitcher } from "./vite-theme-switcher"
+import { useTranslation } from "react-i18next"
 
 interface SiteHeaderProps {
   breadcrumbs?: BreadcrumbItem[]
@@ -17,6 +20,8 @@ export function SiteHeader({
   showBreadcrumbs = true,
   showSidebarTrigger = true
 }: SiteHeaderProps) {
+  const { t } = useTranslation()
+  
   return (
     <header className="flex h-(--header-height) shrink-0 items-center gap-2 border-b transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-(--header-height)">
       <div className="flex w-full items-center gap-1 px-4 lg:gap-2 lg:px-6">
@@ -37,6 +42,8 @@ export function SiteHeader({
         )}
         
         <div className="ml-auto flex items-center gap-2">
+          <ViteThemeSwitcher />
+          <ViteLanguageSwitcher />
           {children ? (
             children
           ) : (
@@ -47,7 +54,7 @@ export function SiteHeader({
                 target="_blank"
                 className="dark:text-foreground"
               >
-                GitHub
+                {t('common.github')}
               </a>
             </Button>
           )}

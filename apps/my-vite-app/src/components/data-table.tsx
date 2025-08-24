@@ -55,6 +55,7 @@ import { z } from "zod"
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { Badge } from "@workspace/ui/components/badge"
+import { useTranslation } from "react-i18next"
 import { Button } from "@workspace/ui/components/button"
 import {
   ChartConfig,
@@ -118,6 +119,7 @@ export const schema = z.object({
 
 // Create a separate component for the drag handle
 function DragHandle({ id }: { id: number }) {
+  const { t } = useTranslation()
   const { attributes, listeners } = useSortable({
     id,
   })
@@ -131,12 +133,14 @@ function DragHandle({ id }: { id: number }) {
       className="text-muted-foreground size-7 hover:bg-transparent"
     >
       <IconGripVertical className="text-muted-foreground size-3" />
-      <span className="sr-only">Drag to reorder</span>
+      <span className="sr-only">{t('pages.dashboard.dataTable.pagination.dragToReorder')}</span>
     </Button>
   )
 }
 
-const columns: ColumnDef<z.infer<typeof schema>>[] = [
+// Function to get columns with translation support
+function getColumns(t: any): ColumnDef<z.infer<typeof schema>>[] {
+  return [
   {
     id: "drag",
     header: () => null,
@@ -170,7 +174,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "header",
-    header: "Header",
+    header: () => t('pages.dashboard.dataTable.columns.header'),
     cell: ({ row }) => {
       return <TableCellViewer item={row.original} />
     },
@@ -178,7 +182,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "type",
-    header: "Section Type",
+    header: () => t('pages.dashboard.dataTable.columns.sectionType'),
     cell: ({ row }) => (
       <div className="w-32">
         <Badge variant="outline" className="text-muted-foreground px-1.5">
@@ -189,7 +193,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "status",
-    header: "Status",
+    header: () => t('pages.dashboard.dataTable.columns.status'),
     cell: ({ row }) => (
       <Badge variant="outline" className="text-muted-foreground px-1.5">
         {row.original.status === "Done" ? (
@@ -203,20 +207,20 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "target",
-    header: () => <div className="w-full text-right">Target</div>,
+    header: () => <div className="w-full text-right">{t('pages.dashboard.dataTable.columns.target')}</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
           e.preventDefault()
           toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
+            loading: `${t('pages.dashboard.dataTable.toast.saving')} ${row.original.header}`,
+            success: t('pages.dashboard.dataTable.toast.success'),
+            error: t('pages.dashboard.dataTable.toast.error'),
           })
         }}
       >
         <Label htmlFor={`${row.original.id}-target`} className="sr-only">
-          Target
+          {t('pages.dashboard.dataTable.columns.target')}
         </Label>
         <Input
           className="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent text-right shadow-none focus-visible:border dark:bg-transparent"
@@ -228,20 +232,20 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "limit",
-    header: () => <div className="w-full text-right">Limit</div>,
+    header: () => <div className="w-full text-right">{t('pages.dashboard.dataTable.columns.limit')}</div>,
     cell: ({ row }) => (
       <form
         onSubmit={(e) => {
           e.preventDefault()
           toast.promise(new Promise((resolve) => setTimeout(resolve, 1000)), {
-            loading: `Saving ${row.original.header}`,
-            success: "Done",
-            error: "Error",
+            loading: `${t('pages.dashboard.dataTable.toast.saving')} ${row.original.header}`,
+            success: t('pages.dashboard.dataTable.toast.success'),
+            error: t('pages.dashboard.dataTable.toast.error'),
           })
         }}
       >
         <Label htmlFor={`${row.original.id}-limit`} className="sr-only">
-          Limit
+          {t('pages.dashboard.dataTable.columns.limit')}
         </Label>
         <Input
           className="hover:bg-input/30 focus-visible:bg-background dark:hover:bg-input/30 dark:focus-visible:bg-input/30 h-8 w-16 border-transparent bg-transparent text-right shadow-none focus-visible:border dark:bg-transparent"
@@ -253,7 +257,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
   },
   {
     accessorKey: "reviewer",
-    header: "Reviewer",
+    header: () => t('pages.dashboard.dataTable.columns.reviewer'),
     cell: ({ row }) => {
       const isAssigned = row.original.reviewer !== "Assign reviewer"
 
@@ -272,7 +276,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
               size="sm"
               id={`${row.original.id}-reviewer`}
             >
-              <SelectValue placeholder="Assign reviewer" />
+              <SelectValue placeholder={t('pages.dashboard.dataTable.actions.assignReviewer')} />
             </SelectTrigger>
             <SelectContent align="end">
               <SelectItem value="Eddie Lake">Eddie Lake</SelectItem>
@@ -310,6 +314,7 @@ const columns: ColumnDef<z.infer<typeof schema>>[] = [
     ),
   },
 ]
+}
 
 function DraggableRow({ row }: { row: Row<z.infer<typeof schema>> }) {
   const { transform, transition, setNodeRef, isDragging } = useSortable({
@@ -341,6 +346,7 @@ export function DataTable({
 }: {
   data: z.infer<typeof schema>[]
 }) {
+  const { t } = useTranslation()
   const [data, setData] = React.useState(() => initialData)
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] =
@@ -367,7 +373,7 @@ export function DataTable({
 
   const table = useReactTable({
     data,
-    columns,
+    columns: getColumns(t),
     state: {
       sorting,
       columnVisibility,
@@ -519,10 +525,10 @@ export function DataTable({
                 ) : (
                   <TableRow>
                     <TableCell
-                      colSpan={columns.length}
+                      colSpan={getColumns(t).length}
                       className="h-24 text-center"
                     >
-                      No results.
+                      {t('pages.dashboard.dataTable.pagination.noResults')}
                     </TableCell>
                   </TableRow>
                 )}

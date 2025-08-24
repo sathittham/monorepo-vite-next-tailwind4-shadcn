@@ -121,7 +121,48 @@
   * {
     @apply border-border outline-ring/50;
   }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Font family configurations */
+.font-noto-sans-thai {
+  font-family: var(--font-noto-sans-thai, "Noto Sans Thai", system-ui, sans-serif);
+}
+
+.font-sarabun {
+  font-family: var(--font-sarabun, "Sarabun", system-ui, sans-serif);
+}
+
+.font-sans {
+  font-family: var(--font-sans, system-ui, sans-serif);
+}
+
+.font-mono {
+  font-family: var(--font-mono, ui-monospace, monospace);
+}
+
+/* Default font family for Thai content */
+:root {
+  --font-primary: "Noto Sans Thai", system-ui, sans-serif;
+  --font-secondary: "Sarabun", system-ui, sans-serif;
+}
+
+/* Apply primary font as default */
+body {
+  font-family: var(--font-primary);
+}
+
+/* Thai language specific styling */
+[lang="th"], [lang="th"] * {
+  font-family: var(--font-primary) !important;
+}
+
+/* Secondary font utility */
+.font-secondary {
+  font-family: var(--font-secondary);
 }

@@ -4,17 +4,20 @@ import { PageContent } from "@/components/page-content"
 import { ContentGrid } from "@/components/content-grid"
 import { Button } from "@workspace/ui/components/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@workspace/ui/components/card"
+import { useTranslation } from "react-i18next"
 
 export default function SimplePage() {
+  const { t } = useTranslation()
+  
   const breadcrumbs = [
     { label: "STM23", href: "/" },
-    { label: "Simple Page", current: true }
+    { label: t('navigation.simplePage'), current: true }
   ]
 
   const headerActions = (
     <>
       <Button variant="ghost" size="sm" className="hidden sm:flex">
-        Actions
+        {t('common.actions')}
       </Button>
       <Button variant="ghost" asChild size="sm" className="hidden sm:flex">
         <a
@@ -23,7 +26,7 @@ export default function SimplePage() {
           target="_blank"
           className="dark:text-foreground"
         >
-          GitHub
+          {t('common.github')}
         </a>
       </Button>
     </>
@@ -36,38 +39,36 @@ export default function SimplePage() {
       headerActions={headerActions}
     >
       <PageHeader
-        title="Simple Page Layout"
-        description="A clean, organized page layout with consistent structure and navigation - perfect for content-focused pages."
+        title={t('pages.simplePage.title')}
+        description={t('pages.simplePage.description')}
       />
       
       <PageContent>
         <ContentGrid cols="2">
           <Card>
             <CardHeader>
-              <CardTitle>Feature One</CardTitle>
+              <CardTitle>{t('pages.simplePage.featureOne.title')}</CardTitle>
               <CardDescription>
-                Description of the first feature or section
+                {t('pages.simplePage.featureOne.description')}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600">
-                This card demonstrates how content looks in the simplified layout. 
-                Perfect for showcasing features, services, or other content.
+                {t('pages.simplePage.featureOne.content')}
               </p>
             </CardContent>
           </Card>
 
           <Card>
             <CardHeader>
-              <CardTitle>Feature Two</CardTitle>
+              <CardTitle>{t('pages.simplePage.featureTwo.title')}</CardTitle>
               <CardDescription>
-                Description of the second feature or section
+                {t('pages.simplePage.featureTwo.description')}
               </CardDescription>
             </CardHeader>
             <CardContent>
               <p className="text-gray-600">
-                Another example card showing how multiple pieces of content 
-                can be organized in a clean, grid-based layout.
+                {t('pages.simplePage.featureTwo.content')}
               </p>
             </CardContent>
           </Card>
@@ -77,7 +78,7 @@ export default function SimplePage() {
       <PageContent>
         <div className="text-center">
           <Button size="lg">
-            Get Started
+            {t('common.getStarted')}
           </Button>
         </div>
       </PageContent>
